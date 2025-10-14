@@ -1,0 +1,395 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-24T16:18:25.379666",
+    "username": "sugarsmax",
+    "artist": "Stone Temple Pilots",
+    "analysis_version": "1.0"
+  },
+  "raw_data": {
+    "personal_tracks": [
+      {
+        "rank": 1,
+        "name": "Dumb Love",
+        "scrobbles": 32,
+        "loved": true,
+        "album": "Purple"
+      },
+      {
+        "rank": 2,
+        "name": "Sex Type Thing",
+        "scrobbles": 32,
+        "loved": true,
+        "album": "Core"
+      },
+      {
+        "rank": 3,
+        "name": "Interstate Love Song",
+        "scrobbles": 21,
+        "loved": true,
+        "album": "Purple"
+      },
+      {
+        "rank": 4,
+        "name": "Sin",
+        "scrobbles": 18,
+        "loved": true,
+        "album": "Core"
+      },
+      {
+        "rank": 5,
+        "name": "Down",
+        "scrobbles": 16,
+        "loved": true,
+        "album": "No. 4"
+      },
+      {
+        "rank": 6,
+        "name": "And So I Know",
+        "scrobbles": 13,
+        "loved": true,
+        "album": "Purple"
+      },
+      {
+        "rank": 7,
+        "name": "Piece of Pie",
+        "scrobbles": 11,
+        "loved": true,
+        "album": "Core"
+      },
+      {
+        "rank": 8,
+        "name": "Plush",
+        "scrobbles": 8,
+        "loved": true,
+        "album": "Core"
+      },
+      {
+        "rank": 9,
+        "name": "Still Remains",
+        "scrobbles": 8,
+        "loved": true,
+        "album": "Core"
+      },
+      {
+        "rank": 10,
+        "name": "Dead & Bloated",
+        "scrobbles": 4,
+        "loved": true,
+        "album": "Core"
+      }
+    ],
+    "global_tracks": [
+      {
+        "rank": 1,
+        "name": "Plush",
+        "scrobbles": 799301,
+        "album": "Core"
+      },
+      {
+        "rank": 2,
+        "name": "Interstate Love Song",
+        "scrobbles": 685990,
+        "album": "Purple"
+      },
+      {
+        "rank": 3,
+        "name": "Creep",
+        "scrobbles": 551070,
+        "album": "Stone Temple Pilots"
+      },
+      {
+        "rank": 4,
+        "name": "Interstate Love Song - 2019 Remaster",
+        "scrobbles": 468191,
+        "album": "Purple"
+      },
+      {
+        "rank": 5,
+        "name": "Vasoline",
+        "scrobbles": 449457,
+        "album": "Purple"
+      },
+      {
+        "rank": 6,
+        "name": "Big Empty",
+        "scrobbles": 395222,
+        "album": "Purple"
+      },
+      {
+        "rank": 7,
+        "name": "Sex Type Thing",
+        "scrobbles": 391855,
+        "album": "Core"
+      },
+      {
+        "rank": 8,
+        "name": "Trippin' on a Hole in a Paper Heart",
+        "scrobbles": 383218,
+        "album": "Tiny Music..."
+      },
+      {
+        "rank": 9,
+        "name": "Wicked Garden",
+        "scrobbles": 298841,
+        "album": "Core"
+      },
+      {
+        "rank": 10,
+        "name": "Sour Girl",
+        "scrobbles": 289299,
+        "album": "No. 4"
+      },
+      {
+        "rank": 11,
+        "name": "Big Bang Baby",
+        "scrobbles": 260876,
+        "album": "Tiny Music..."
+      },
+      {
+        "rank": 12,
+        "name": "Down",
+        "scrobbles": 235467,
+        "album": "No. 4"
+      },
+      {
+        "rank": 13,
+        "name": "Creep - 2017 Remaster",
+        "scrobbles": 208933,
+        "album": "Stone Temple Pilots"
+      },
+      {
+        "rank": 14,
+        "name": "Lady Picture Show",
+        "scrobbles": 190731,
+        "album": "Tiny Music..."
+      },
+      {
+        "rank": 15,
+        "name": "Plush - Acoustic",
+        "scrobbles": 187173,
+        "album": "Core"
+      },
+      {
+        "rank": 16,
+        "name": "Vasoline - 2019 Remaster",
+        "scrobbles": 173587,
+        "album": "Purple"
+      },
+      {
+        "rank": 17,
+        "name": "Dead & Bloated",
+        "scrobbles": 167545,
+        "album": "Core"
+      },
+      {
+        "rank": 18,
+        "name": "Plush - 2017 Remaster",
+        "scrobbles": 167239,
+        "album": "Core"
+      },
+      {
+        "rank": 19,
+        "name": "Crackerman",
+        "scrobbles": 167104,
+        "album": "Core"
+      },
+      {
+        "rank": 20,
+        "name": "Sin",
+        "scrobbles": 153271,
+        "album": "Core"
+      }
+    ]
+  },
+  "matches": [
+    {
+      "track_name": "Sex Type Thing",
+      "personal_rank": 2,
+      "global_rank": 7,
+      "personal_scrobbles": 32,
+      "global_scrobbles": 391855,
+      "loved": true,
+      "rank_difference": -5
+    },
+    {
+      "track_name": "Interstate Love Song",
+      "personal_rank": 3,
+      "global_rank": 2,
+      "personal_scrobbles": 21,
+      "global_scrobbles": 685990,
+      "loved": true,
+      "rank_difference": 1
+    },
+    {
+      "track_name": "Sin",
+      "personal_rank": 4,
+      "global_rank": 20,
+      "personal_scrobbles": 18,
+      "global_scrobbles": 153271,
+      "loved": true,
+      "rank_difference": -16
+    },
+    {
+      "track_name": "Down",
+      "personal_rank": 5,
+      "global_rank": 12,
+      "personal_scrobbles": 16,
+      "global_scrobbles": 235467,
+      "loved": true,
+      "rank_difference": -7
+    },
+    {
+      "track_name": "Plush",
+      "personal_rank": 8,
+      "global_rank": 1,
+      "personal_scrobbles": 8,
+      "global_scrobbles": 799301,
+      "loved": true,
+      "rank_difference": 7
+    },
+    {
+      "track_name": "Dead & Bloated",
+      "personal_rank": 10,
+      "global_rank": 17,
+      "personal_scrobbles": 4,
+      "global_scrobbles": 167545,
+      "loved": true,
+      "rank_difference": -7
+    }
+  ],
+  "analysis_results": {
+    "spearman": {
+      "value": -11.257142857142858,
+      "interpretation": "Negative very strong correlation",
+      "details": {
+        "sum_d_squared": 429,
+        "n": 6
+      }
+    },
+    "kendall": {
+      "value": 0.06666666666666667,
+      "interpretation": "Positive very weak or no agreement",
+      "details": {
+        "concordant_pairs": 8,
+        "discordant_pairs": 7,
+        "total_pairs": 15
+      }
+    },
+    "top_n": {
+      "value": 66.66666666666667,
+      "interpretation": "Average top-N overlap: 66.7%",
+      "details": {
+        "top_3": {
+          "overlap_count": 1,
+          "overlap_percentage": 50.0,
+          "personal_tracks": [
+            "Interstate Love Song",
+            "Sex Type Thing"
+          ],
+          "global_tracks": [
+            "Plush",
+            "Interstate Love Song"
+          ]
+        },
+        "top_5": {
+          "overlap_count": 1,
+          "overlap_percentage": 50.0,
+          "personal_tracks": [
+            "Down",
+            "Interstate Love Song",
+            "Sin",
+            "Sex Type Thing"
+          ],
+          "global_tracks": [
+            "Plush",
+            "Interstate Love Song"
+          ]
+        },
+        "top_10": {
+          "overlap_count": 3,
+          "overlap_percentage": 100.0,
+          "personal_tracks": [
+            "Down",
+            "Interstate Love Song",
+            "Sin",
+            "Dead & Bloated",
+            "Plush",
+            "Sex Type Thing"
+          ],
+          "global_tracks": [
+            "Plush",
+            "Interstate Love Song",
+            "Sex Type Thing"
+          ]
+        }
+      }
+    },
+    "rbo": {
+      "value": 0.4207786854715169,
+      "interpretation": "Moderate top-weighted similarity",
+      "details": {
+        "persistence_parameter": 0.9,
+        "max_rank": 20
+      }
+    },
+    "weighted": {
+      "value": 0.2496483063615283,
+      "interpretation": "Positive weak top-weighted correlation",
+      "details": {
+        "weight_function": "inverse",
+        "total_weight": 1.5083333333333333,
+        "top_3_weights": [
+          0.5,
+          0.3333333333333333,
+          0.25
+        ]
+      }
+    },
+    "percentile": {
+      "value": 0.8333333333333334,
+      "interpretation": "Balanced taste between mainstream and deep cuts",
+      "details": {
+        "strongly_preferred": 1,
+        "moderately_preferred": 2,
+        "similar_preference": 0,
+        "moderately_mainstream": 2,
+        "strongly_mainstream": 1,
+        "personal_percentiles": [
+          90.0,
+          80.0,
+          70.0,
+          60.0,
+          30.0,
+          10.0
+        ],
+        "global_percentiles": [
+          70.0,
+          95.0,
+          5.0,
+          45.0,
+          100.0,
+          20.0
+        ],
+        "percentile_differences": [
+          20.0,
+          -15.0,
+          65.0,
+          15.0,
+          -70.0,
+          -10.0
+        ]
+      }
+    }
+  },
+  "visualization_files": [
+    "/Users/maxfiep/Library/CloudStorage/GoogleDrive-pmaxfield@gmail.com/My Drive/git_personal/Pete_Sandbox_personal/last.fm/compare_tracks_to_global/visualizations/interactive_scatter_stone_temple_pilots_20250924_161825.html",
+    "/Users/maxfiep/Library/CloudStorage/GoogleDrive-pmaxfield@gmail.com/My Drive/git_personal/Pete_Sandbox_personal/last.fm/compare_tracks_to_global/visualizations/ranking_table_stone_temple_pilots_20250924_161825.html"
+  ],
+  "summary": {
+    "total_personal_tracks": 10,
+    "total_global_tracks": 20,
+    "matched_tracks": 6,
+    "loved_tracks": 6,
+    "average_rank_difference": -4.5
+  }
+}
