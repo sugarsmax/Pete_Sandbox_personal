@@ -1,0 +1,104 @@
+
+graph LR
+    subgraph Personal["🎵 YOUR TOP 20 TRACKS"]
+        P1["1. The Blood is Love"]
+        P2["2. Misfit Love"]
+        P3["3. I Sat by the Ocean"]
+        P4["4. In My Head"]
+        P5["5. Go With the Flow"]
+        P6["6. Better Living Through Chemi..."]
+        P7["7. 3s and 7s"]
+        P8["8. Long Slow Goodbye"]
+        P9["9. You Cant Quit Me Baby"]
+        P10["10. Make It Wit Chu"]
+        P11["11. Un Reborn Again"]
+        P12["12. The Bronze"]
+        P13["13. Better Living Through Chemi..."]
+        P14["14. Sick Sick Sick"]
+        P15["15. Into the Hollow"]
+        P16["16. Mama Got the Blues"]
+        P17["17. Do It Again"]
+        P18["18. Villains of Circumstance"]
+        P19["19. Little Sister"]
+        P20["20. Fortress"]
+    end
+
+    subgraph Global["🌍 GLOBAL TOP 20 TRACKS"]
+        G1["1. No One Knows"]
+        G2["2. Go With the Flow"]
+        G3["3. Little Sister"]
+        G4["4. Make It Wit Chu"]
+        G5["5. First It Giveth"]
+        G6["6. 3s and 7s"]
+        G7["7. I Sat by the Ocean"]
+        G8["8. The Lost Art of Keeping a S..."]
+        G9["9. In My Head"]
+        G10["10. Feel Good Hit of the Summer"]
+        G11["11. Gonna Leave You"]
+        G12["12. Do It Again"]
+        G13["13. Song For The Dead"]
+        G14["14. Burn the Witch"]
+        G15["15. Another Love Song"]
+        G16["16. The Sky Is Fallin"]
+        G17["17. Six Shooter"]
+        G18["18. Mosquito Song"]
+        G19["19. Medication"]
+        G20["20. My God Is the Sun"]
+    end
+
+    %% Connections between matching tracks only
+    P3 -.->|↑4 spots| G7
+    P4 -.->|↑5 spots| G9
+    P5 -.->|↓3 spots| G2
+    P7 -.->|↓1 spots| G6
+    P10 -.->|↓6 spots| G4
+    P17 -.->|↓5 spots| G12
+    P19 -.->|↓16 spots| G3
+
+    %% Styling for different track categories
+    classDef personalOnly fill:#88A943,stroke:#6A9632,stroke-width:2px,color:#fff
+    classDef globalOnly fill:#CCCCCC,stroke:#999999,stroke-width:2px,color:#333
+    classDef rankHigher fill:#1A6BFF,stroke:#0D4A99,stroke-width:2px,color:#fff
+    classDef rankLower fill:#D74E26,stroke:#B8371C,stroke-width:2px,color:#fff
+    classDef rankSame fill:#87bc40,stroke:#6A9632,stroke-width:2px,color:#fff
+
+    class P1 personalOnly
+    class P2 personalOnly
+    class P3 rankHigher
+    class P4 rankHigher
+    class P5 rankLower
+    class P6 personalOnly
+    class P7 rankLower
+    class P8 personalOnly
+    class P9 personalOnly
+    class P10 rankLower
+    class P11 personalOnly
+    class P12 personalOnly
+    class P13 personalOnly
+    class P14 personalOnly
+    class P15 personalOnly
+    class P16 personalOnly
+    class P17 rankLower
+    class P18 personalOnly
+    class P19 rankLower
+    class P20 personalOnly
+    class G1 globalOnly
+    class G2 rankLower
+    class G3 rankLower
+    class G4 rankLower
+    class G5 globalOnly
+    class G6 rankLower
+    class G7 rankHigher
+    class G8 globalOnly
+    class G9 rankHigher
+    class G10 globalOnly
+    class G11 globalOnly
+    class G12 rankLower
+    class G13 globalOnly
+    class G14 globalOnly
+    class G15 globalOnly
+    class G16 globalOnly
+    class G17 globalOnly
+    class G18 globalOnly
+    class G19 globalOnly
+    class G20 globalOnly
