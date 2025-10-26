@@ -1,0 +1,45 @@
+{
+  "artist": "Queens of the Stone Age",
+  "username": "sugarsmax",
+  "personal_tracks": [
+    {
+      "rank": 1,
+      "name": "Example Track 1",
+      "artist": "Queens of the Stone Age",
+      "album": "Example Album",
+      "scrobbles": 10,
+      "loved": true,
+      "album_art_url": ""
+    },
+    {
+      "rank": 2,
+      "name": "Example Track 2",
+      "artist": "Queens of the Stone Age",
+      "album": "Example Album",
+      "scrobbles": 8,
+      "loved": false,
+      "album_art_url": ""
+    }
+  ],
+  "global_tracks": [
+    {
+      "rank": 1,
+      "name": "Example Track 1",
+      "artist": "Queens of the Stone Age",
+      "album": "Example Album",
+      "scrobbles": 100000,
+      "loved": false,
+      "album_art_url": ""
+    },
+    {
+      "rank": 2,
+      "name": "Example Track 2",
+      "artist": "Queens of the Stone Age",
+      "album": "Example Album",
+      "scrobbles": 80000,
+      "loved": false,
+      "album_art_url": ""
+    }
+  ],
+  "scrape_timestamp": "2025-09-26T14:40:33.093594"
+}

@@ -1,0 +1,279 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stone Temple Pilots: Track Ranking Comparison Table</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .subtitle {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .summary-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .stat-title {
+            font-size: 0.9em;
+            opacity: 0.8;
+            margin-bottom: 8px;
+        }
+        
+        .stat-value {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #87bc40;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        th, td {
+            padding: 15px 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        th {
+            background: rgba(255, 255, 255, 0.1);
+            font-weight: bold;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        tr:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transition: background 0.3s ease;
+        }
+        
+        .track-name {
+            font-weight: bold;
+            max-width: 300px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .loved {
+            color: #87bc40;
+            font-size: 1.2em;
+        }
+        
+        .rank-diff {
+            font-weight: bold;
+            padding: 4px 8px;
+            border-radius: 4px;
+            text-align: center;
+        }
+        
+        .positive-diff {
+            background: rgba(135, 188, 64, 0.3);
+            color: #87bc40;
+        }
+        
+        .negative-diff {
+            background: rgba(215, 78, 38, 0.3);
+            color: #d74e26;
+        }
+        
+        .neutral-diff {
+            background: rgba(255, 255, 255, 0.1);
+            color: #cccccc;
+        }
+        
+        .scrobbles {
+            font-family: 'Courier New', monospace;
+            color: #8ddafc;
+        }
+        
+        .rank {
+            font-weight: bold;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .analysis-section {
+            margin-top: 40px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+        }
+        
+        .analysis-title {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #8ddafc;
+        }
+        
+        .analysis-item {
+            margin-bottom: 10px;
+            padding: 10px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border-left: 4px solid #87bc40;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Stone Temple Pilots: Track Ranking Analysis</h1>
+        <div class="subtitle">Personal vs Global Last.fm Rankings Comparison</div>
+        
+        <div class="summary-stats">
+            <div class="stat-card">
+                <div class="stat-title">Total Matched Tracks</div>
+                <div class="stat-value">6</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">Loved Tracks</div>
+                <div class="stat-value">6 (100%)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">Deep Cuts Preferred</div>
+                <div class="stat-value">4</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">Average Rank Difference</div>
+                <div class="stat-value">-4.5</div>
+            </div>
+        </div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Track Name</th>
+                    <th>Loved</th>
+                    <th>Personal Rank</th>
+                    <th>Global Rank</th>
+                    <th>Rank Difference</th>
+                    <th>Your Scrobbles</th>
+                    <th>Global Listeners</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="track-name">Sin</td>
+                    <td class="loved">❤️</td>
+                    <td class="rank">#4</td>
+                    <td class="rank">#20</td>
+                    <td><span class="rank-diff negative-diff">-16</span></td>
+                    <td class="scrobbles">18</td>
+                    <td class="scrobbles">153,271</td>
+                </tr>
+                <tr>
+                    <td class="track-name">Down</td>
+                    <td class="loved">❤️</td>
+                    <td class="rank">#5</td>
+                    <td class="rank">#12</td>
+                    <td><span class="rank-diff negative-diff">-7</span></td>
+                    <td class="scrobbles">16</td>
+                    <td class="scrobbles">235,467</td>
+                </tr>
+                <tr>
+                    <td class="track-name">Dead & Bloated</td>
+                    <td class="loved">❤️</td>
+                    <td class="rank">#10</td>
+                    <td class="rank">#17</td>
+                    <td><span class="rank-diff negative-diff">-7</span></td>
+                    <td class="scrobbles">4</td>
+                    <td class="scrobbles">167,545</td>
+                </tr>
+                <tr>
+                    <td class="track-name">Sex Type Thing</td>
+                    <td class="loved">❤️</td>
+                    <td class="rank">#2</td>
+                    <td class="rank">#7</td>
+                    <td><span class="rank-diff negative-diff">-5</span></td>
+                    <td class="scrobbles">32</td>
+                    <td class="scrobbles">391,855</td>
+                </tr>
+                <tr>
+                    <td class="track-name">Interstate Love Song</td>
+                    <td class="loved">❤️</td>
+                    <td class="rank">#3</td>
+                    <td class="rank">#2</td>
+                    <td><span class="rank-diff positive-diff">+1</span></td>
+                    <td class="scrobbles">21</td>
+                    <td class="scrobbles">685,990</td>
+                </tr>
+                <tr>
+                    <td class="track-name">Plush</td>
+                    <td class="loved">❤️</td>
+                    <td class="rank">#8</td>
+                    <td class="rank">#1</td>
+                    <td><span class="rank-diff positive-diff">+7</span></td>
+                    <td class="scrobbles">8</td>
+                    <td class="scrobbles">799,301</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="analysis-section">
+            <div class="analysis-title">🎵 Analysis Insights</div>
+            <div class="analysis-item">
+                <strong>SPEARMAN:</strong> Negative very strong correlation (Value: -11.257)
+            </div>
+            <div class="analysis-item">
+                <strong>KENDALL:</strong> Positive very weak or no agreement (Value: 0.067)
+            </div>
+            <div class="analysis-item">
+                <strong>TOP_N:</strong> Average top-N overlap: 66.7% (Value: 66.667)
+            </div>
+            <div class="analysis-item">
+                <strong>RBO:</strong> Moderate top-weighted similarity (Value: 0.421)
+            </div>
+            <div class="analysis-item">
+                <strong>WEIGHTED:</strong> Positive weak top-weighted correlation (Value: 0.250)
+            </div>
+            <div class="analysis-item">
+                <strong>PERCENTILE:</strong> Balanced taste between mainstream and deep cuts (Value: 0.833)
+            </div>
+        </div>
+    </div>
+</body>
+</html>
