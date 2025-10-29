@@ -42,3 +42,4 @@ source .venv/bin/activate
 - Most projects are Jupyter notebooks or Python scripts
 - See individual project directories for detailed READMEs
 - This is an active personal sandbox—contents are exploratory and frequently updated
+
