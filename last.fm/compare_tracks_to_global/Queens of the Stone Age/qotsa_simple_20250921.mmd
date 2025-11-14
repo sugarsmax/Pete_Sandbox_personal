@@ -1,0 +1,43 @@
+
+flowchart TD
+    subgraph YourTop [Your Personal Favorites]
+        P1[1. The Blood is Love]
+        P2[2. Misfit Love] 
+        P3[3. I Sat by the Ocean]
+        P4[4. In My Head]
+        P5[5. Go With the Flow]
+    end
+
+    subgraph GlobalTop [Global Fan Favorites]  
+        G1[1. No One Knows]
+        G2[2. Go With the Flow]
+        G3[3. Little Sister]
+        G4[4. Make It Wit Chu] 
+        G5[5. First It Giveth]
+    end
+
+    subgraph Match [Your Shared Top Tracks]
+        M1[I Sat by the Ocean: You #3 → Global #7]
+        M2[In My Head: You #4 → Global #9] 
+        M3[Go With the Flow: You #5 → Global #2]
+        M4[3s & 7s: You #7 → Global #6]
+        M5[Make It Wit Chu: You #10 → Global #4]
+    end
+
+    P3 -.-> M1
+    P4 -.-> M2
+    P5 -.-> M3
+
+    G2 -.-> M3
+    G4 -.-> M5
+
+    style P1 fill:#88A943
+    style P2 fill:#88A943
+    style G1 fill:#CCCCCC
+    style G3 fill:#CCCCCC
+    style G5 fill:#CCCCCC
+    style M1 fill:#1A6BFF
+    style M2 fill:#1A6BFF  
+    style M3 fill:#D74E26
+    style M4 fill:#87bc40
+    style M5 fill:#D74E26

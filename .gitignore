@@ -56,11 +56,3 @@ frames/
 
 # Logs
 *.log
-
-# Credentials & Secrets
-.env
-.env.local
-config/.credentials.json
-config/secrets/
-*.key
-*.pem
