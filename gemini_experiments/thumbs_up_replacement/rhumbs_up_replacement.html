@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background: #1a1a1a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Helvetica Neue', sans-serif;
+            color: white;
+        }
+
+        .controls {
+            margin-bottom: 20px;
+            background: #333;
+            padding: 10px 20px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        button {
+            background: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.1s;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        button.reset {
+            background: #d32f2f;
+        }
+
+        canvas {
+            border: 2px solid #333;
+            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+            max-height: 80vh;
+        }
+
+        .status {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="controls">
+        <span>Safety Filter:</span>
+        <button onclick="applyFilter()">ACTIVATE POSITIVITY</button>
+        <button class="reset" onclick="resetImage()">RESET</button>
+    </div>
+
+    <canvas id="posterCanvas"></canvas>
+    <div class="status" id="statusText">Loading asset...</div>
+
+    <script>
+        const canvas = document.getElementById('posterCanvas');
+        const ctx = canvas.getContext('2d');
+        const status = document.getElementById('statusText');
+
+        // Image Sources
+        const imgUrl = 'https://i.ebayimg.com/images/g/e34AAOSwqrpjMqF-/s-l1200.jpg';
+        const img = new Image();
+        img.crossOrigin = "Anonymous";
+
+        // Preload replacement assets
+        const handImg = new Image();
+        handImg.src = "hand.png";
+
+        const puppyImg = new Image();
+        puppyImg.src = "puppy.png";
+
+        img.onload = () => {
+            // Scale canvas to image aspect ratio, max height 600px
+            const scale = 600 / img.height;
+            canvas.width = img.width * scale;
+            canvas.height = 600;
+
+            // Initial Draw
+            drawOriginal();
+            status.innerText = "Asset Loaded. Ready for photo-realistic sanitization.";
+        };
+
+        img.onerror = () => {
+            canvas.width = 500;
+            canvas.height = 600;
+            ctx.fillStyle = "#000";
+            ctx.fillRect(0, 0, 500, 600);
+            ctx.fillStyle = "#fff";
+            ctx.textAlign = "center";
+            ctx.fillText("External Image Blocked by CORS", 250, 300);
+            status.innerText = "CORS Error - Using placeholder";
+        };
+
+        img.src = imgUrl;
+
+        function drawOriginal() {
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        }
+
+        function applyFilter() {
+            drawOriginal();
+
+            const gunHandX = canvas.width * 0.65;
+            const gunHandY = canvas.height * 0.55;
+
+            // Approximate left hand position (holding barrel)
+            const leftHandX = canvas.width * 0.35;
+            const leftHandY = canvas.height * 0.65;
+
+            // 1. Remove the Gun (by covering it with a Puppy)
+            // Center between hands
+            const centerX = (gunHandX + leftHandX) / 2;
+            const centerY = (gunHandY + leftHandY) / 2;
+
+            const puppyWidth = 220;
+            const puppyHeight = puppyWidth * (puppyImg.height / puppyImg.width);
+
+            ctx.drawImage(puppyImg, centerX - puppyWidth / 2, centerY - puppyHeight / 2 - 20, puppyWidth, puppyHeight);
+
+            // 2. Replace Hands with Thumbs Up
+            const handWidth = 180;
+            const handHeight = handWidth * (handImg.height / handImg.width);
+
+            // Right Hand (Gun Hand)
+            ctx.save();
+            ctx.translate(gunHandX + 20, gunHandY - 20);
+            ctx.rotate(-0.2);
+            // Shadow for realism
+            ctx.shadowColor = "rgba(0,0,0,0.5)";
+            ctx.shadowBlur = 10;
+            ctx.drawImage(handImg, -handWidth / 2, -handHeight / 2, handWidth, handHeight);
+            ctx.restore();
+
+            // Left Hand (Barrel Hand)
+            ctx.save();
+            ctx.translate(leftHandX - 20, leftHandY);
+            ctx.rotate(0.2);
+            ctx.scale(-1, 1); // Mirror horizontally
+            ctx.shadowColor = "rgba(0,0,0,0.5)";
+            ctx.shadowBlur = 10;
+            ctx.drawImage(handImg, -handWidth / 2, -handHeight / 2, handWidth, handHeight);
+            ctx.restore();
+
+            status.innerText = "Filter Applied: Gun removed (Puppy inserted). Hands replaced with photo-realistic validation.";
+        }
+
+        function resetImage() {
+            drawOriginal();
+            status.innerText = "Original Asset Restored.";
+        }
+    </script>
+
+</body>
+
+</html>
