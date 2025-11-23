@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cornell Hypar Interactive Model</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #f0f0f0;
+            font-family: sans-serif;
+        }
+
+        #info {
+            position: absolute;
+            top: 10px;
+            width: 100%;
+            text-align: center;
+            z-index: 100;
+            display: block;
+            color: #333;
+            pointer-events: none;
+        }
+
+        #controls {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 8px;
+            pointer-events: auto;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+
+<body>
+    <div id="info">
+        <h2>Cornell "Flying Diaper" Structure</h2>
+        <p>Hyperbolic Paraboloid (Rectangular Plan) | 1966</p>
+        <p><i>Drag to Rotate &middot; Scroll to Zoom</i></p>
+    </div>
+
+    <div id="controls">
+        <label for="curvature">Drape (Curvature):</label>
+        <input type="range" id="curvature" min="0.01" max="0.15" step="0.01" value="0.06">
+    </div>
+
+    <script>
+        // 1. SCENE SETUP
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0xf0f0f0);
+        scene.fog = new THREE.Fog(0xf0f0f0, 20, 100);
+
+        const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.set(40, 20, 40);
+
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.shadowMap.enabled = true;
+        document.body.appendChild(renderer.domElement);
+
+        // 2. CONTROLS (Orbit)
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.05;
+
+        // 3. LIGHTING
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+        scene.add(ambientLight);
+
+        const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+        dirLight.position.set(50, 50, 50);
+        dirLight.castShadow = true;
+        scene.add(dirLight);
+
+        // 4. GEOMETRY DEFINITION
+        // We use ParametricGeometry to accurately model the function z = c*x*y
+        // The domain is Rectangular (Not Square) based on your research.
+        const length = 30; // X axis
+        const width = 20;  // Y axis (Narrower)
+        let curvature = 0.06;
+
+        let shellMesh, supportGroup;
+
+        function createHyparFunction(u, v, target) {
+            // u and v range from 0 to 1. We map them to our dimensions.
+            const x = (u - 0.5) * length;
+            const y = (v - 0.5) * width;
+            const z = curvature * x * y; // The Saddle Equation
+            target.set(x, z, y); // Swap Y and Z for Three.js coordinate system (Y is up)
+        }
+
+        function buildStructure() {
+            if (shellMesh) scene.remove(shellMesh);
+            if (supportGroup) scene.remove(supportGroup);
+
+            // A. The Concrete Shell
+            const geometry = new THREE.ParametricGeometry(createHyparFunction, 25, 25);
+            const material = new THREE.MeshPhongMaterial({
+                color: 0x808080,
+                side: THREE.DoubleSide,
+                flatShading: false,
+                specular: 0x111111,
+                shininess: 5,
+                polygonOffset: true,
+                polygonOffsetFactor: 1, // Helps grid lines show up
+                polygonOffsetUnits: 1
+            });
+            shellMesh = new THREE.Mesh(geometry, material);
+            shellMesh.castShadow = true;
+            shellMesh.receiveShadow = true;
+            scene.add(shellMesh);
+
+            // B. The Grid Lines (The "Ruled Surface" wooden planks)
+            const wireframe = new THREE.WireframeGeometry(geometry);
+            const line = new THREE.LineSegments(wireframe);
+            line.material.depthTest = false;
+            line.material.opacity = 0.3;
+            line.material.transparent = true;
+            line.material.color = new THREE.Color(0x333333);
+            shellMesh.add(line);
+
+            // C. The Supports (Legs)
+            // Low points are at corners where x*y is negative (assuming +curvature)
+            // x = +/- length/2, y = +/- width/2
+            // Low points: (+L/2, -W/2) and (-L/2, +W/2)
+            supportGroup = new THREE.Group();
+
+            const lowZ = curvature * (length / 2) * (-width / 2);
+            const groundZ = lowZ - 10; // extend into ground
+
+            // Function to add a leg
+            function addLeg(x, y, zStart) {
+                const legGeo = new THREE.CylinderGeometry(0.5, 0.5, Math.abs(groundZ - zStart), 8);
+                const legMat = new THREE.MeshPhongMaterial({ color: 0x555555 });
+                const leg = new THREE.Mesh(legGeo, legMat);
+                // Position cylinder center
+                leg.position.set(x, (zStart + groundZ) / 2, y);
+                supportGroup.add(leg);
+            }
+
+            addLeg(length / 2, -width / 2, lowZ);
+            addLeg(-length / 2, width / 2, lowZ);
+
+            scene.add(supportGroup);
+
+            // D. The Ground
+            const planeGeo = new THREE.PlaneGeometry(60, 60);
+            const planeMat = new THREE.MeshPhongMaterial({ color: 0x3a5f0b }); // Grass green
+            const plane = new THREE.Mesh(planeGeo, planeMat);
+            plane.rotation.x = -Math.PI / 2;
+            plane.position.y = groundZ;
+            plane.receiveShadow = true;
+            supportGroup.add(plane);
+        }
+
+        buildStructure();
+
+        // 5. ANIMATION LOOP
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // 6. DYNAMIC UPDATES
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        document.getElementById('curvature').addEventListener('input', (e) => {
+            curvature = parseFloat(e.target.value);
+            buildStructure();
+        });
+
+    </script>
+</body>
+
+</html>

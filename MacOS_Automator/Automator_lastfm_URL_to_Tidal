@@ -1,0 +1,94 @@
+on run {input, parameters}
+	-- Get URL from clipboard
+	set lastfmURL to the clipboard as text
+	
+	-- Validate it's a last.fm URL
+	if lastfmURL does not contain "last.fm/music/" then
+		display dialog "Please copy a last.fm track URL to the clipboard first." buttons {"OK"} default button "OK" with icon caution
+		return
+	end if
+	
+	-- Parse the URL: https://www.last.fm/music/{artist}/_/{track}
+	-- Split by "/music/" to get the path
+	set AppleScript's text item delimiters to "/music/"
+	set musicPath to text item 2 of lastfmURL
+	set AppleScript's text item delimiters to ""
+	
+	-- Split by "/" to get artist and track parts
+	set AppleScript's text item delimiters to "/"
+	set pathParts to text items of musicPath
+	set AppleScript's text item delimiters to ""
+	
+	-- Extract artist (first part) and track (third part, after "_")
+	if (count of pathParts) ≥ 3 then
+		set artistName to item 1 of pathParts
+		set trackName to item 3 of pathParts
+		
+		-- Remove any query parameters or anchors from track name
+		set AppleScript's text item delimiters to "?"
+		set trackName to text item 1 of trackName
+		set AppleScript's text item delimiters to "#"
+		set trackName to text item 1 of trackName
+		set AppleScript's text item delimiters to ""
+		
+		-- Replace + with spaces for readability
+		set AppleScript's text item delimiters to "+"
+		set artistParts to text items of artistName
+		set AppleScript's text item delimiters to " "
+		set artistName to artistParts as text
+		
+		set AppleScript's text item delimiters to "+"
+		set trackParts to text items of trackName
+		set AppleScript's text item delimiters to " "
+		set trackName to trackParts as text
+		set AppleScript's text item delimiters to ""
+		
+		-- Build Tidal search query
+		set searchQuery to artistName & " " & trackName
+		
+		-- URL encode the search query
+		set encodedQuery to my urlEncode(searchQuery)
+		
+		-- Build Tidal URL
+		set tidalURL to "https://tidal.com/search?q=" & encodedQuery
+		
+		-- Open in Safari
+		tell application "Safari"
+			activate
+			open location tidalURL
+		end tell
+	else
+		display dialog "Could not parse the last.fm URL. Expected format: https://www.last.fm/music/{artist}/_/{track}" buttons {"OK"} default button "OK" with icon caution
+	end if
+	
+	return input
+end run
+
+-- URL encode function
+on urlEncode(theText)
+	set theTextEncoded to ""
+	repeat with eachChar in characters of theText
+		set useChar to eachChar
+		set eachCharNum to ASCII number of eachChar
+		if eachCharNum = 32 then
+			-- Space to %20
+			set useChar to "%20"
+		else if (eachCharNum ≠ 42) and (eachCharNum ≠ 95) and (eachCharNum < 45 or eachCharNum > 46) and (eachCharNum < 48 or eachCharNum > 57) and (eachCharNum < 65 or eachCharNum > 90) and (eachCharNum < 97 or eachCharNum > 122) then
+			-- Encode special characters
+			set firstDig to round (eachCharNum / 16) rounding down
+			set secondDig to eachCharNum mod 16
+			if firstDig > 9 then
+				set aNum to firstDig + 55
+				set firstDig to ASCII character aNum
+			end if
+			if secondDig > 9 then
+				set aNum to secondDig + 55
+				set secondDig to ASCII character aNum
+			end if
+			set useChar to "%" & firstDig & secondDig as string
+		end if
+		set theTextEncoded to theTextEncoded & useChar as string
+	end repeat
+	return theTextEncoded
+end urlEncode
+

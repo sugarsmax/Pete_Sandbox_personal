@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Six-Bar Dwell Linkage Simulator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+            background: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        #canvas-container {
+            flex-grow: 1;
+            position: relative;
+            background: #ffffff;
+            cursor: grab;
+            overflow: hidden;
+        }
+
+        #canvas-container:active {
+            cursor: grabbing;
+        }
+
+        canvas {
+            display: block;
+        }
+
+        #controls {
+            padding: 15px 20px;
+            background: #fff;
+            border-top: 1px solid #ccc;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            z-index: 10;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            max-width: 600px;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        input[type=range] {
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #007bff;
+            color: #007bff;
+        }
+
+        .btn-outline:hover {
+            background: #eef6ff;
+        }
+
+        #status {
+            font-family: monospace;
+            font-size: 12px;
+            color: #666;
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .instructions {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #555;
+            pointer-events: none;
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="canvas-container">
+        <div class="instructions">
+            <strong>Controls:</strong><br>
+            • Scroll to Zoom<br>
+            • Drag to Pan<br>
+            • Use slider below for motion
+        </div>
+        <canvas id="simCanvas"></canvas>
+    </div>
+
+    <div id="controls">
+        <button id="playBtn" class="btn">Play</button>
+
+        <div class="control-group">
+            <label>
+                Input Crank Angle
+                <span id="angleDisplay">0°</span>
+            </label>
+            <input type="range" id="angleSlider" min="0" max="360" step="1" value="0">
+        </div>
+
+        <button id="resetViewBtn" class="btn btn-outline">Reset View</button>
+        <div id="status">DX: 0.00</div>
+    </div>
+
+    <script>
+        // --- 1. CONFIGURATION (Matches Python Script) ---
+        const PARAMS = {
+            L_g: 4.0,      // Ground distance
+            L_1: 1.0,      // Crank
+            L_2: 4.0,      // Coupler Link
+            L_3: 3.0,      // Rocker
+            coupler_u: 2.0, // Coupler point local X
+            coupler_v: 1.5, // Coupler point local Y
+            L_5: 3.8,      // Connecting Rod
+            slider_y: -1.0 // Slider rail height
+        };
+
+        // --- 2. MATH & KINEMATICS ---
+
+        // Intersection of two circles (p1, r1) and (p2, r2)
+        function getCircleIntersection(p1, r1, p2, r2) {
+            const d2 = (p1.x - p2.x) ** 2 + (p1.y - p2.y) ** 2;
+            const d = Math.sqrt(d2);
+
+            if (d > r1 + r2 || d < Math.abs(r1 - r2) || d === 0) return null;
+
+            const a = (r1 ** 2 - r2 ** 2 + d2) / (2 * d);
+            const h = Math.sqrt(Math.max(0, r1 ** 2 - a ** 2));
+
+            const x2 = p1.x + a * (p2.x - p1.x) / d;
+            const y2 = p1.y + a * (p2.y - p1.y) / d;
+
+            // Elbow up solution
+            return {
+                x: x2 + h * (p2.y - p1.y) / d,
+                y: y2 - h * (p2.x - p1.x) / d
+            };
+        }
+
+        function solveMechanism(angleDeg) {
+            const rad = angleDeg * Math.PI / 180;
+
+            // A. Crank Tip
+            const crankTip = {
+                x: PARAMS.L_1 * Math.cos(rad),
+                y: PARAMS.L_1 * Math.sin(rad)
+            };
+
+            // B. Rocker Tip (Intersection of L2 from Crank and L3 from Ground)
+            const groundPivot = { x: PARAMS.L_g, y: 0 };
+            const rockerTip = getCircleIntersection(crankTip, PARAMS.L_2, groundPivot, PARAMS.L_3);
+
+            if (!rockerTip) return null;
+
+            // C. Coupler Point (Triangle logic)
+            const vec = { x: rockerTip.x - crankTip.x, y: rockerTip.y - crankTip.y };
+            const len = Math.sqrt(vec.x ** 2 + vec.y ** 2);
+            const unit = { x: vec.x / len, y: vec.y / len };
+            const perp = { x: -unit.y, y: unit.x }; // Perpendicular vector
+
+            const P = {
+                x: crankTip.x + (unit.x * PARAMS.coupler_u) + (perp.x * PARAMS.coupler_v),
+                y: crankTip.y + (unit.y * PARAMS.coupler_u) + (perp.y * PARAMS.coupler_v)
+            };
+
+            // D. Slider Position
+            // Intersection of circle at P (radius L5) and line y = slider_y
+            // (x - Px)^2 + (y - Py)^2 = r^2
+            // x = Px +/- sqrt(r^2 - (Py - slider_y)^2)
+            let sliderX = null;
+            const dy = Math.abs(P.y - PARAMS.slider_y);
+
+            if (dy <= PARAMS.L_5) {
+                const dx = Math.sqrt(PARAMS.L_5 ** 2 - dy ** 2);
+                sliderX = P.x - dx; // Choose left solution
+            }
+
+            return { crankTip, rockerTip, groundPivot, P, sliderX };
+        }
+
+        // Pre-calculate path for trace
+        const tracePath = [];
+        for (let i = 0; i <= 360; i += 2) {
+            const sol = solveMechanism(i);
+            if (sol) tracePath.push(sol.P);
+        }
+
+        // --- 3. VISUALIZATION & UI ---
+
+        const canvas = document.getElementById('simCanvas');
+        const ctx = canvas.getContext('2d');
+        const slider = document.getElementById('angleSlider');
+        const angleDisplay = document.getElementById('angleDisplay');
+        const playBtn = document.getElementById('playBtn');
+        const resetBtn = document.getElementById('resetViewBtn');
+        const statusDiv = document.getElementById('status');
+
+        // Viewport State
+        let view = { x: 0, y: 0, scale: 50 }; // 50 pixels = 1 unit
+        let isDragging = false;
+        let lastMouse = { x: 0, y: 0 };
+        let isPlaying = false;
+        let animFrame;
+
+        // Resize handling
+        function resize() {
+            canvas.width = canvas.parentElement.clientWidth;
+            canvas.height = canvas.parentElement.clientHeight;
+            view.x = canvas.width / 2 - (PARAMS.L_g * view.scale / 2); // Center somewhat
+            view.y = canvas.height / 2 + 100;
+            draw();
+        }
+        window.addEventListener('resize', resize);
+
+        // Drawing Logic
+        function draw() {
+            const angle = parseFloat(slider.value);
+            const sol = solveMechanism(angle);
+
+            // Clear
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            ctx.save();
+            // Apply Pan/Zoom
+            ctx.translate(view.x, view.y);
+            ctx.scale(view.scale, -view.scale); // Flip Y so + is Up
+
+            // Draw Grid/Ground
+            ctx.strokeStyle = '#e0e0e0';
+            ctx.lineWidth = 1 / view.scale;
+            ctx.beginPath();
+            ctx.moveTo(-10, 0); ctx.lineTo(10, 0); // Ground line
+            ctx.moveTo(-10, PARAMS.slider_y); ctx.lineTo(10, PARAMS.slider_y); // Slider rail
+            ctx.stroke();
+
+            // Draw Trace Path
+            ctx.strokeStyle = 'rgba(0, 100, 255, 0.2)';
+            ctx.lineWidth = 2 / view.scale;
+            ctx.setLineDash([5 / view.scale, 5 / view.scale]);
+            ctx.beginPath();
+            tracePath.forEach((p, i) => {
+                if (i === 0) ctx.moveTo(p.x, p.y);
+                else ctx.lineTo(p.x, p.y);
+            });
+            ctx.closePath();
+            ctx.stroke();
+            ctx.setLineDash([]);
+
+            if (sol) {
+                // Draw Links
+                ctx.lineCap = 'round';
+                ctx.lineJoin = 'round';
+
+                // Link 1 (Crank)
+                drawLink({ x: 0, y: 0 }, sol.crankTip, '#333', 4);
+
+                // Link 2 (Coupler Triangle)
+                ctx.fillStyle = 'rgba(40, 167, 69, 0.3)';
+                ctx.strokeStyle = '#28a745';
+                ctx.lineWidth = 2 / view.scale;
+                ctx.beginPath();
+                ctx.moveTo(sol.crankTip.x, sol.crankTip.y);
+                ctx.lineTo(sol.rockerTip.x, sol.rockerTip.y);
+                ctx.lineTo(sol.P.x, sol.P.y);
+                ctx.closePath();
+                ctx.fill();
+                ctx.stroke();
+
+                // Link 3 (Rocker)
+                drawLink(sol.rockerTip, sol.groundPivot, '#6f42c1', 4);
+
+                // Link 5 (Connector)
+                if (sol.sliderX !== null) {
+                    const sliderPos = { x: sol.sliderX, y: PARAMS.slider_y };
+                    drawLink(sol.P, sliderPos, '#dc3545', 3);
+
+                    // Draw Slider Block
+                    ctx.fillStyle = '#666';
+                    const w = 0.8, h = 0.4;
+                    ctx.fillRect(sliderPos.x - w / 2, sliderPos.y - h / 2, w, h);
+
+                    // Update Status (Crude velocity check)
+                    // Calculate previous position for velocity approximation
+                    const prevSol = solveMechanism(angle - 1);
+                    if (prevSol && prevSol.sliderX !== null) {
+                        const delta = Math.abs(sol.sliderX - prevSol.sliderX);
+                        const statusText = delta < 0.001 ? "DWELLING" : "MOVING";
+                        statusDiv.innerText = `State: ${statusText} | Pos: ${sol.sliderX.toFixed(2)}`;
+                        statusDiv.style.color = delta < 0.001 ? "red" : "black";
+
+                        // Visual Cue on block
+                        if (delta < 0.001) {
+                            ctx.strokeStyle = 'red';
+                            ctx.lineWidth = 2 / view.scale;
+                            ctx.strokeRect(sliderPos.x - w / 2, sliderPos.y - h / 2, w, h);
+                        }
+                    }
+                }
+            }
+
+            // Draw Pivots (Joints)
+            drawPivot({ x: 0, y: 0 });
+            drawPivot(sol.groundPivot);
+            drawPivot(sol.crankTip);
+            drawPivot(sol.rockerTip);
+            drawPivot(sol.P);
+
+            ctx.restore();
+        }
+
+        function drawLink(p1, p2, color, width) {
+            ctx.strokeStyle = color;
+            ctx.lineWidth = width / view.scale;
+            ctx.beginPath();
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.stroke();
+        }
+
+        function drawPivot(p) {
+            ctx.fillStyle = 'white';
+            ctx.strokeStyle = 'black';
+            ctx.lineWidth = 1 / view.scale;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, 0.15, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.stroke();
+        }
+
+        // --- 4. INTERACTIONS ---
+
+        // Pan
+        canvas.addEventListener('mousedown', e => {
+            isDragging = true;
+            lastMouse = { x: e.clientX, y: e.clientY };
+        });
+        window.addEventListener('mouseup', () => isDragging = false);
+        window.addEventListener('mousemove', e => {
+            if (!isDragging) return;
+            const dx = e.clientX - lastMouse.x;
+            const dy = e.clientY - lastMouse.y;
+            view.x += dx;
+            view.y += dy;
+            lastMouse = { x: e.clientX, y: e.clientY };
+            draw();
+        });
+
+        // Zoom
+        canvas.addEventListener('wheel', e => {
+            e.preventDefault();
+            const zoomSpeed = 0.1;
+            const zoomFactor = e.deltaY > 0 ? (1 - zoomSpeed) : (1 + zoomSpeed);
+
+            // Zoom towards mouse pointer logic
+            // 1. Get mouse pos in world coords before zoom
+            const rect = canvas.getBoundingClientRect();
+            const mouseX = e.clientX - rect.left;
+            const mouseY = e.clientY - rect.top;
+
+            const worldX = (mouseX - view.x) / view.scale;
+            const worldY = (mouseY - view.y) / -view.scale;
+
+            // 2. Apply Zoom
+            view.scale *= zoomFactor;
+
+            // 3. Adjust view x/y so world X/Y remains under mouse
+            view.x = mouseX - (worldX * view.scale);
+            view.y = mouseY - (worldY * -view.scale);
+
+            draw();
+        });
+
+        // Slider
+        slider.addEventListener('input', (e) => {
+            if (isPlaying) stopAnim();
+            angleDisplay.innerText = e.target.value + '°';
+            draw();
+        });
+
+        // Play/Pause
+        playBtn.addEventListener('click', () => {
+            if (isPlaying) stopAnim();
+            else startAnim();
+        });
+
+        function startAnim() {
+            isPlaying = true;
+            playBtn.innerText = "Pause";
+            playBtn.classList.add('btn-outline');
+            loop();
+        }
+
+        function stopAnim() {
+            isPlaying = false;
+            playBtn.innerText = "Play";
+            playBtn.classList.remove('btn-outline');
+            cancelAnimationFrame(animFrame);
+        }
+
+        function loop() {
+            let val = parseFloat(slider.value);
+            val = (val + 1) % 360;
+            slider.value = val;
+            angleDisplay.innerText = Math.floor(val) + '°';
+            draw();
+            if (isPlaying) animFrame = requestAnimationFrame(loop);
+        }
+
+        // Reset View
+        resetBtn.addEventListener('click', () => {
+            resize();
+        });
+
+        // Init
+        resize();
+
+    </script>
+</body>
+
+</html>
