@@ -8,20 +8,12 @@
         "image": "images/thumb_cornell_hypar.png"
     },
     {
-        "title": "RoughBook Grapher",
+        "title": "Instachaaz Charts",
         "description": "Hand-drawn style data visualization tool.",
         "path": "../gemini_experiments/instachaaz_grapher/instachaaz_grapher.html",
         "tag": "Data",
         "icon": "chart",
         "image": "images/thumb_roughbook_grapher.png"
-    },
-    {
-        "title": "Positivity Injector",
-        "description": "AI inpainting for positive vibes.",
-        "path": "../gemini_experiments/thumbs_up_replacement/interactive_positivity_tool.html",
-        "tag": "AI",
-        "icon": "magic",
-        "image": "images/thumb_positivity_injector.png"
     },
     {
         "title": "Linkage Dwell",
@@ -54,14 +46,6 @@
         "tag": "Astronomy",
         "icon": "cube",
         "image": "images/thumb_stellar_orbital.png"
-    },
-    {
-        "title": "Relativistic Starfield",
-        "description": "How stars appear at near-light speed travel.",
-        "path": "https://gemini.google.com/share/1caae0864fa5",
-        "tag": "Physics",
-        "icon": "cube",
-        "image": "images/thumb_relativistic_stars.png"
     },
     {
         "title": "False Stereo Video",
