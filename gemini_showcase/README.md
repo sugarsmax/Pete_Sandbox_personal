@@ -84,7 +84,17 @@ This will:
 
 ## Viewing Locally
 
-The page uses `fetch()` to load `projects.json`, which requires a web server.
+### Quick Preview (No Server Required!)
+
+The page works by double-clicking `index.html` thanks to `projects.js`:
+
+1. Edit `projects.json` as needed
+2. Run: `./sync_projects_20251124.py` (syncs JSON → JS)
+3. Double-click `index.html` to open in browser
+
+### With a Web Server
+
+If you prefer using a server:
 
 **Option 1: Python**
 ```bash
@@ -96,6 +106,8 @@ python3 -m http.server 8000
 ```
 https://sugarsmax.github.io/Pete_Sandbox_personal/gemini_showcase/
 ```
+
+**How it works:** The page checks for `PROJECTS_DATA` from `projects.js` first (works with `file://`), then falls back to fetching `projects.json` (requires server).
 
 ## Design
 

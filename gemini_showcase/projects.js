@@ -1,4 +1,6 @@
-[
+// Auto-generated from projects.json
+// This file allows local preview without a server
+const PROJECTS_DATA = [
     {
         "title": "Cornell Hypar",
         "description": "Interactive 3D hyperbolic paraboloid structure.",
@@ -79,4 +81,4 @@
         "icon": "cube",
         "image": "images/thumb_moon_lander.png"
     }
-]
+];

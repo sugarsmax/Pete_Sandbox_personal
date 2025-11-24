@@ -225,6 +225,9 @@
         </footer>
     </div>
 
+    <!-- Load projects data for local preview (works with file://) -->
+    <script src="projects.js"></script>
+
     <script>
         // Icon Library (SVG Paths)
         const icons = {
@@ -237,8 +240,16 @@
 
         async function loadProjects() {
             try {
-                const response = await fetch('projects.json');
-                const projects = await response.json();
+                // Check if projects.js was loaded (for local preview)
+                let projects;
+                if (typeof PROJECTS_DATA !== 'undefined') {
+                    projects = PROJECTS_DATA;
+                } else {
+                    // Fallback to fetch for server/GitHub Pages
+                    const response = await fetch('projects.json');
+                    projects = await response.json();
+                }
+                
                 const grid = document.getElementById('project-grid');
 
                 grid.innerHTML = projects.map((project, index) => {
@@ -273,7 +284,7 @@
 
             } catch (error) {
                 console.error('Error loading projects:', error);
-                document.getElementById('project-grid').innerHTML = '<p style="grid-column: 1/-1; text-align: center;">Failed to load projects. View this page via a web server or on GitHub Pages.</p>';
+                document.getElementById('project-grid').innerHTML = '<p style="grid-column: 1/-1; text-align: center;">Failed to load projects. Make sure projects.js exists for local preview.</p>';
             }
         }
 
