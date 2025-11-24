@@ -2,7 +2,7 @@
     {
         "title": "Cornell Hypar",
         "description": "Interactive 3D hyperbolic paraboloid structure.",
-        "path": "../gemini_experiments/Cornell_hypar/Cornell_hypar.html",
+        "path": "https://gemini.google.com/share/91db147f919c",
         "tag": "3D Viz",
         "icon": "cube",
         "image": "images/thumb_cornell_hypar.png"
