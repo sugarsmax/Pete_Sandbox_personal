@@ -23,17 +23,17 @@
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             background-color: var(--bg-white);
             /* Supergraphics Background Stripe */
-            background-image: 
-                linear-gradient(135deg, 
-                    transparent 0%, 
-                    transparent 40%, 
-                    var(--m-light-blue) 40%, 
-                    var(--m-light-blue) 50%, 
-                    var(--m-dark-blue) 50%, 
-                    var(--m-dark-blue) 60%, 
-                    var(--m-red) 60%, 
-                    var(--m-red) 70%, 
-                    transparent 70%, 
+            background-image:
+                linear-gradient(135deg,
+                    transparent 0%,
+                    transparent 40%,
+                    var(--m-light-blue) 40%,
+                    var(--m-light-blue) 50%,
+                    var(--m-dark-blue) 50%,
+                    var(--m-dark-blue) 60%,
+                    var(--m-red) 60%,
+                    var(--m-red) 70%,
+                    transparent 70%,
                     transparent 100%);
             background-attachment: fixed;
             background-size: 100vw 100vh;
@@ -53,7 +53,7 @@
             background: white;
             padding: 30px;
             border-left: 10px solid var(--m-red);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         h1 {
@@ -90,7 +90,7 @@
             display: flex;
             flex-direction: column;
             border: none;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             position: relative;
             overflow: hidden;
             animation: fadeIn 0.5s ease forwards;
@@ -98,26 +98,42 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Hard edge hover effect */
         .card:hover {
             transform: translate(-4px, -4px);
-            box-shadow: 8px 8px 0px rgba(0,0,0,0.2);
+            box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.2);
         }
 
         .card-thumbnail {
             width: 100%;
-            height: 140px; /* Reduced height */
+            height: 140px;
+            /* Reduced height */
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             overflow: hidden;
         }
-        
+
+        .card-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+            z-index: 2;
+        }
+
         /* M-Sport Stripe Graphic for Thumbnails */
         .stripe-bg {
             position: absolute;
@@ -130,14 +146,14 @@
         }
 
         .card:nth-child(even) .stripe-bg {
-             transform: rotate(-15deg);
+            transform: rotate(-15deg);
         }
 
         .card-thumbnail svg {
             width: 60px;
             height: 60px;
             z-index: 2;
-            filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.2));
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.2));
         }
 
         .card-content {
@@ -182,8 +198,13 @@
         }
 
         @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            .stripe-bg { transform: rotate(0deg); }
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .stripe-bg {
+                transform: rotate(0deg);
+            }
         }
     </style>
 </head>
@@ -220,13 +241,26 @@
                 const projects = await response.json();
                 const grid = document.getElementById('project-grid');
 
-                grid.innerHTML = projects.map((project, index) => `
-                    <a href="${project.path}" target="_blank" class="card" style="animation-delay: ${index * 100}ms">
-                        <div class="card-thumbnail">
+                grid.innerHTML = projects.map((project, index) => {
+                    let thumbnailContent;
+
+                    if (project.image) {
+                        // If an image is provided, show the image
+                        thumbnailContent = `<img src="${project.image}" alt="${project.title} thumbnail">`;
+                    } else {
+                        // Fallback to the SVG icon with the striped background
+                        thumbnailContent = `
                             <div class="stripe-bg"></div>
                             <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 ${icons[project.icon] || icons.default}
                             </svg>
+                        `;
+                    }
+
+                    return `
+                    <a href="${project.path}" target="_blank" class="card" style="animation-delay: ${index * 100}ms">
+                        <div class="card-thumbnail">
+                            ${thumbnailContent}
                         </div>
                         <div class="card-content">
                             <h2 class="card-title">${project.title}</h2>
@@ -234,11 +268,12 @@
                             <span class="card-tag">${project.tag}</span>
                         </div>
                     </a>
-                `).join('');
+                    `;
+                }).join('');
 
             } catch (error) {
                 console.error('Error loading projects:', error);
-                document.getElementById('project-grid').innerHTML = '<p style="grid-column: 1/-1; text-align: center;">Failed to load projects. Please check the JSON format.</p>';
+                document.getElementById('project-grid').innerHTML = '<p style="grid-column: 1/-1; text-align: center;">Failed to load projects. View this page via a web server or on GitHub Pages.</p>';
             }
         }
 
