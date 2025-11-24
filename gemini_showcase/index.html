@@ -93,6 +93,13 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             position: relative;
             overflow: hidden;
+            animation: fadeIn 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Hard edge hover effect */
@@ -188,88 +195,55 @@
             <p class="subtitle">Experimental Labs // 2025</p>
         </header>
 
-        <div class="cards-grid">
-            <!-- Cornell Hypar Card -->
-            <a href="../gemini_experiments/Cornell_hypar/Cornell_hypar.html" target="_blank" class="card">
-                <div class="card-thumbnail">
-                    <div class="stripe-bg"></div>
-                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10 90 Q30 10, 50 50 T90 90" stroke="white" stroke-width="3" fill="none" />
-                        <path d="M10 10 Q30 90, 50 50 T90 10" stroke="white" stroke-width="3" fill="none" />
-                        <circle cx="10" cy="90" r="4" fill="white" />
-                        <circle cx="90" cy="90" r="4" fill="white" />
-                        <circle cx="10" cy="10" r="4" fill="white" />
-                        <circle cx="90" cy="10" r="4" fill="white" />
-                    </svg>
-                </div>
-                <div class="card-content">
-                    <h2 class="card-title">Cornell Hypar</h2>
-                    <p class="card-description">Interactive 3D hyperbolic paraboloid structure.</p>
-                    <span class="card-tag">3D Viz</span>
-                </div>
-            </a>
-
-            <!-- Instachaaz Grapher Card -->
-            <a href="../gemini_experiments/instachaaz_grapher/instachaaz_grapher.html" target="_blank" class="card">
-                <div class="card-thumbnail">
-                    <div class="stripe-bg"></div>
-                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15 80 L30 60 L45 70 L60 40 L75 50 L90 20" stroke="white" stroke-width="4"
-                            fill="none" stroke-linecap="round" stroke-linejoin="round" />
-                        <rect x="10" y="10" width="80" height="80" stroke="white" stroke-width="3" fill="none" />
-                    </svg>
-                </div>
-                <div class="card-content">
-                    <h2 class="card-title">RoughBook Grapher</h2>
-                    <p class="card-description">Hand-drawn style data visualization tool.</p>
-                    <span class="card-tag">Data</span>
-                </div>
-            </a>
-
-            <!-- Positivity Injector Card -->
-            <a href="../gemini_experiments/thumbs_up_replacement/interactive_positivity_tool.html" target="_blank"
-                class="card">
-                <div class="card-thumbnail">
-                    <div class="stripe-bg"></div>
-                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="50" cy="50" r="30" stroke="white" stroke-width="4" fill="none" />
-                        <path d="M35 45 Q40 35 45 45" stroke="white" stroke-width="4" stroke-linecap="round" fill="none" />
-                        <path d="M55 45 Q60 35 65 45" stroke="white" stroke-width="4" stroke-linecap="round" fill="none" />
-                        <path d="M35 60 Q50 75 65 60" stroke="white" stroke-width="4" stroke-linecap="round" fill="none" />
-                    </svg>
-                </div>
-                <div class="card-content">
-                    <h2 class="card-title">Positivity Injector</h2>
-                    <p class="card-description">AI inpainting for positive vibes.</p>
-                    <span class="card-tag">AI</span>
-                </div>
-            </a>
-
-            <!-- Linkage Dwell Simulator Card -->
-            <a href="../Linkage_design/linkage_dwell.html" target="_blank" class="card">
-                <div class="card-thumbnail">
-                    <div class="stripe-bg"></div>
-                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="20" cy="50" r="6" fill="white" />
-                        <circle cx="80" cy="50" r="6" fill="white" />
-                        <line x1="20" y1="50" x2="50" y2="30" stroke="white" stroke-width="4" />
-                        <line x1="50" y1="30" x2="80" y2="50" stroke="white" stroke-width="4" />
-                        <line x1="80" y1="50" x2="50" y2="70" stroke="white" stroke-width="4" />
-                        <line x1="50" y1="70" x2="20" y2="50" stroke="white" stroke-width="4" />
-                    </svg>
-                </div>
-                <div class="card-content">
-                    <h2 class="card-title">Linkage Dwell</h2>
-                    <p class="card-description">Six-bar mechanical motion simulator.</p>
-                    <span class="card-tag">Sim</span>
-                </div>
-            </a>
+        <div id="project-grid" class="cards-grid">
+            <!-- Cards will be injected here by JavaScript -->
         </div>
 
         <footer>
             <p>Built with Google Gemini AI</p>
         </footer>
     </div>
+
+    <script>
+        // Icon Library (SVG Paths)
+        const icons = {
+            cube: `<path d="M10 90 Q30 10, 50 50 T90 90" stroke="white" stroke-width="3" fill="none" /><path d="M10 10 Q30 90, 50 50 T90 10" stroke="white" stroke-width="3" fill="none" /><circle cx="10" cy="90" r="4" fill="white" /><circle cx="90" cy="90" r="4" fill="white" /><circle cx="10" cy="10" r="4" fill="white" /><circle cx="90" cy="10" r="4" fill="white" />`,
+            chart: `<path d="M15 80 L30 60 L45 70 L60 40 L75 50 L90 20" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" /><rect x="10" y="10" width="80" height="80" stroke="white" stroke-width="3" fill="none" />`,
+            magic: `<circle cx="50" cy="50" r="30" stroke="white" stroke-width="4" fill="none" /><path d="M35 45 Q40 35 45 45" stroke="white" stroke-width="4" stroke-linecap="round" fill="none" /><path d="M55 45 Q60 35 65 45" stroke="white" stroke-width="4" stroke-linecap="round" fill="none" /><path d="M35 60 Q50 75 65 60" stroke="white" stroke-width="4" stroke-linecap="round" fill="none" />`,
+            gear: `<circle cx="20" cy="50" r="6" fill="white" /><circle cx="80" cy="50" r="6" fill="white" /><line x1="20" y1="50" x2="50" y2="30" stroke="white" stroke-width="4" /><line x1="50" y1="30" x2="80" y2="50" stroke="white" stroke-width="4" /><line x1="80" y1="50" x2="50" y2="70" stroke="white" stroke-width="4" /><line x1="50" y1="70" x2="20" y2="50" stroke="white" stroke-width="4" />`,
+            default: `<rect x="25" y="25" width="50" height="50" stroke="white" stroke-width="4" fill="none"/>`
+        };
+
+        async function loadProjects() {
+            try {
+                const response = await fetch('projects.json');
+                const projects = await response.json();
+                const grid = document.getElementById('project-grid');
+
+                grid.innerHTML = projects.map((project, index) => `
+                    <a href="${project.path}" target="_blank" class="card" style="animation-delay: ${index * 100}ms">
+                        <div class="card-thumbnail">
+                            <div class="stripe-bg"></div>
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                ${icons[project.icon] || icons.default}
+                            </svg>
+                        </div>
+                        <div class="card-content">
+                            <h2 class="card-title">${project.title}</h2>
+                            <p class="card-description">${project.description}</p>
+                            <span class="card-tag">${project.tag}</span>
+                        </div>
+                    </a>
+                `).join('');
+
+            } catch (error) {
+                console.error('Error loading projects:', error);
+                document.getElementById('project-grid').innerHTML = '<p style="grid-column: 1/-1; text-align: center;">Failed to load projects. Please check the JSON format.</p>';
+            }
+        }
+
+        loadProjects();
+    </script>
 </body>
 
 </html>

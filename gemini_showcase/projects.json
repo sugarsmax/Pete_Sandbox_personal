@@ -1,0 +1,30 @@
+[
+    {
+        "title": "Cornell Hypar",
+        "description": "Interactive 3D hyperbolic paraboloid structure.",
+        "path": "../gemini_experiments/Cornell_hypar/Cornell_hypar.html",
+        "tag": "3D Viz",
+        "icon": "cube"
+    },
+    {
+        "title": "RoughBook Grapher",
+        "description": "Hand-drawn style data visualization tool.",
+        "path": "../gemini_experiments/instachaaz_grapher/instachaaz_grapher.html",
+        "tag": "Data",
+        "icon": "chart"
+    },
+    {
+        "title": "Positivity Injector",
+        "description": "AI inpainting for positive vibes.",
+        "path": "../gemini_experiments/thumbs_up_replacement/interactive_positivity_tool.html",
+        "tag": "AI",
+        "icon": "magic"
+    },
+    {
+        "title": "Linkage Dwell",
+        "description": "Six-bar mechanical motion simulator.",
+        "path": "../Linkage_design/linkage_dwell.html",
+        "tag": "Sim",
+        "icon": "gear"
+    }
+]
