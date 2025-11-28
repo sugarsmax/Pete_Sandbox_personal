@@ -78,5 +78,13 @@
         "tag": "Arcade",
         "icon": "cube",
         "image": "images/thumb_moon_lander.png"
+    },
+    {
+        "title": "Durer's Lute",
+        "description": "Variations on Durer's lute.",
+        "path": "https://gemini.google.com/share/954c010b54cc",
+        "tag": "Art",
+        "icon": "cube",
+        "image": "images/thumb_durer_lute.png"
     }
 ]
