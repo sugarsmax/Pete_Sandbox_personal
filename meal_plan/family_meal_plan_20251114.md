@@ -14,10 +14,46 @@
 | 4 | Baked Lemon Herb Chicken Thighs with Orzo & Green Beans | Home |
 | 5 | Sheet Pan Chicken Fajitas with Cauliflower Rice | Home |
 | 6 | Thai Takeout (Pad Thai/Curry - Mild) | Takeout |
-| 7 | One-Pot Creamy Tuscan Pasta with Chicken | Home |
+| 7 | Crispy Teriyaki Tofu with Broccoli & Rice | Home |
 | 8 | Shrimp Fried Rice with Mixed Vegetables | Home |
 | 9 | Asian Black Cod with Bok Choy & Rice Noodles | Home |
 | 10 | Pizza & Salad | Takeout |
+
+---
+
+## Prep Tips
+
+### Make-Ahead Suggestions
+- **Day 1 Morning:** Make miso glaze for salmon, marinate in fridge
+- **Day 3 Evening:** Cut extra sweet potatoes and peppers for Day 5
+- **Day 7 or 9:** Cook extra rice for Day 8's fried rice (works best with day-old rice)
+
+### Freezer-Friendly
+- Miso salmon (Day 1) - can freeze raw marinated fillets
+- Lemon herb chicken (Day 4) - can freeze raw marinated chicken thighs
+
+### Time-Savers
+- Buy pre-riced cauliflower
+- Use rotisserie chicken for Day 7 if short on time
+- Pre-cut vegetables available in produce section
+- Rice cooker makes hands-off rice
+
+---
+
+## Cooking Time Summary
+
+| Day | Meal | Active Time | Total Time | Difficulty |
+|-----|------|-------------|------------|------------|
+| 1 | Miso Salmon | 20 min | 35 min | Easy |
+| 2 | Takeout | 0 min | 0 min | N/A |
+| 3 | Burrito Bowls | 15 min | 30 min | Easy |
+| 4 | Lemon Herb Chicken | 20 min | 45 min | Easy |
+| 5 | Sheet Pan Fajitas | 15 min | 35 min | Easy |
+| 6 | Takeout | 0 min | 0 min | N/A |
+| 7 | Teriyaki Tofu | 25 min | 35 min | Easy |
+| 8 | Shrimp Fried Rice | 25 min | 25 min | Easy |
+| 9 | Black Cod | 20 min | 30 min | Easy-Medium |
+| 10 | Takeout | 0 min | 0 min | N/A |
 
 ---
 
@@ -132,30 +168,34 @@
 
 ---
 
-### Day 7: **One-Pot Creamy Tuscan Pasta with Chicken**
-**Type:** Home-cooked | **Time:** 30 minutes
+### Day 7: **Crispy Teriyaki Tofu with Broccoli & Rice**
+**Type:** Home-cooked | **Time:** 35 minutes
 
 **Ingredients:**
-- 450g chicken thighs or breast, cubed
-- 450g penne pasta
-- 2 cups chicken broth
-- 1 cup heavy cream
-- 1 can diced tomatoes
-- 3 cups fresh spinach
-- 4 garlic cloves
-- Sun-dried tomatoes (optional)
-- Parmesan cheese
-- Italian herbs
+- 400g extra-firm tofu, pressed and cubed
+- 4 cups broccoli florets
+- Jasmine rice (2 cups dry)
+- 4 tbsp soy sauce (low sodium)
+- 2 tbsp rice vinegar
+- 2 tbsp honey or maple syrup
+- 1 tbsp sesame oil
+- 2 tsp cornstarch
+- 3 garlic cloves, minced
+- Fresh ginger, grated
+- Sesame seeds
+- Scallions for garnish
+- Vegetable oil for frying
 
 **Instructions:**
-1. Brown chicken in large pot
-2. Add garlic, cook 1 minute
-3. Add pasta, broth, tomatoes; bring to boil
-4. Simmer 12-15 minutes until pasta tender
-5. Stir in cream, spinach, and cheese
-6. Serve with parmesan
+1. Press tofu to remove excess water, cut into 1-inch cubes
+2. Cook rice according to package
+3. Mix soy sauce, rice vinegar, honey, sesame oil, cornstarch for teriyaki sauce
+4. Pan-fry tofu in vegetable oil until golden and crispy on all sides (8-10 min)
+5. Steam or stir-fry broccoli with garlic and ginger
+6. Add teriyaki sauce to tofu, toss until coated and sauce thickens
+7. Serve tofu and broccoli over rice, garnish with sesame seeds and scallions
 
-**Teen Help:** Cube chicken, measure ingredients, stir
+**Teen Help:** Press tofu, cube tofu, measure sauce ingredients, cook rice
 
 ---
 
@@ -227,37 +267,35 @@
 - Chicken thighs, bone-in skin-on (8 pieces)
 - Chicken breast (900g)
 - Shrimp, peeled and deveined (450g)
+- Extra-firm tofu (400g)
 - Eggs (6)
 
 ### Vegetables & Produce
-- Broccoli, snap peas, carrots (900g mixed for stir-fry)
+- Broccoli florets (1.5kg total: 900g mixed for stir-fry Day 1, 600g for Day 7)
+- Snap peas, carrots (for Day 1 stir-fry)
 - Green beans (450g)
 - Mixed stir-fry vegetables (2 cups: peas, carrots, corn, edamame)
 - Sweet potatoes (4 large)
 - Bell peppers (6-7 mixed colors)
 - Onions (4-5)
 - Baby bok choy (4-5 heads)
-- Fresh spinach (3 cups/85g)
 - Cauliflower (2 bags riced or 1 head)
 - Avocados (3-4)
 - Lemons (2)
 - Limes (6-8)
 - Garlic (2 heads)
 - Fresh ginger (1 large knob)
-- Scallions (2-3 bunches)
+- Scallions (3-4 bunches)
 - Cilantro (2 bunches)
 - Fresh herbs (thyme, rosemary, parsley)
 - Lettuce (for burrito bowls)
 
 ### Pantry Staples
-- Jasmine rice (1 bag - need extra for fried rice)
+- Jasmine rice (1 bag - need extra for fried rice and Day 7)
 - Rice noodles (340g)
 - Orzo pasta (340g)
-- Penne pasta (450g)
 - Black beans (2-3 cans)
-- Diced tomatoes (1 can)
 - Corn (fresh or frozen, 350g)
-- Sun-dried tomatoes (optional)
 - White miso paste
 - Soy sauce (low sodium)
 - Mirin
@@ -265,23 +303,21 @@
 - Sesame oil
 - Vegetable oil
 - Olive oil
-- Honey
+- Honey or maple syrup
+- Cornstarch
 - Chicken broth (2 liters)
-- Heavy cream (240ml)
 
 ### Spices & Seasonings
 - Cumin
 - Paprika
 - Garlic powder
 - Fajita seasoning (mild)
-- Italian herbs (basil, oregano)
 - White pepper
 - Salt & black pepper
 
 ### Dairy & Refrigerated
 - Sour cream
 - Shredded cheese (Mexican blend, cheddar)
-- Parmesan cheese
 - Butter
 
 ### Bakery
@@ -291,66 +327,6 @@
 - Sesame seeds
 - Peanuts or cashews (optional for stir-fries)
 
----
 
-## Prep Tips
 
-### Make-Ahead Suggestions
-- **Day 1 Morning:** Make miso glaze for salmon, marinate in fridge
-- **Day 3 Evening:** Cut extra sweet potatoes and peppers for Day 5
-- **Day 7 or 9:** Cook extra rice for Day 8's fried rice (works best with day-old rice)
-
-### Freezer-Friendly
-- Miso salmon (Day 1) - can freeze raw marinated fillets
-- Lemon herb chicken (Day 4) - can freeze raw marinated chicken thighs
-
-### Time-Savers
-- Buy pre-riced cauliflower
-- Use rotisserie chicken for Day 7 if short on time
-- Pre-cut vegetables available in produce section
-- Rice cooker makes hands-off rice
-
----
-
-## Cooking Time Summary
-
-| Day | Meal | Active Time | Total Time | Difficulty |
-|-----|------|-------------|------------|------------|
-| 1 | Miso Salmon | 20 min | 35 min | Easy |
-| 2 | Takeout | 0 min | 0 min | N/A |
-| 3 | Burrito Bowls | 15 min | 30 min | Easy |
-| 4 | Lemon Herb Chicken | 20 min | 45 min | Easy |
-| 5 | Sheet Pan Fajitas | 15 min | 35 min | Easy |
-| 6 | Takeout | 0 min | 0 min | N/A |
-| 7 | Tuscan Pasta | 30 min | 30 min | Easy-Medium |
-| 8 | Shrimp Fried Rice | 25 min | 25 min | Easy |
-| 9 | Black Cod | 20 min | 30 min | Easy-Medium |
-| 10 | Takeout | 0 min | 0 min | N/A |
-
----
-
-## Nutritional Balance
-
-This meal plan provides:
-- **Protein variety:** Fish (2x), shrimp (1x), chicken (3x), vegetarian (1x), takeout (3x)
-- **Cooking methods:** Baking, roasting, sheet pan, one-pot, stir-frying
-- **Cuisine variety:** Asian, Mexican, Thai, Italian
-- **Carb sources:** Rice, orzo, pasta, noodles, sweet potatoes, tortillas (no regular potatoes)
-- **Vegetable-rich:** Every meal includes 2-3 servings of vegetables
-
----
-
-## Notes for Success
-
-1. **Leftover Strategy:** Day 3 uses Mexican takeout leftovers; Day 8 works best with day-old rice (make extra on Day 1, 7, or 9)
-2. **Teen Involvement:** All home-cooked meals have specific teen-helper tasks listed
-3. **Flexibility:** Swap takeout days as needed for schedule convenience
-4. **Batch Cooking:** Consider doubling Day 9 (black cod) and freezing for future use
-5. **Spice Control:** All recipes are naturally mild; adjust seasoning at the table for individual preferences
-6. **Shopping Efficiency:** Buy proteins on sale and freeze; most vegetables stay fresh 5-7 days
-7. **Fried Rice Tip:** Day 8's shrimp fried rice works best with day-old rice; cook extra rice on any Asian meal day
-
----
-
-**Plan created by AI assistant (Claude Sonnet 4.5) on November 14, 2025**
 
