@@ -1,0 +1,16 @@
+{
+  "top_tracks": {
+    "timestamp": "2025-12-05T17:59:43.341334",
+    "username": "sugarsmax",
+    "track_count": 500,
+    "test_mode": false
+  },
+  "lyrics": {
+    "timestamp": "2025-12-05T17:30:28.975304",
+    "provider": "genius",
+    "fetched": 58,
+    "cached": 10,
+    "failed": 32,
+    "test_mode": false
+  }
+}
