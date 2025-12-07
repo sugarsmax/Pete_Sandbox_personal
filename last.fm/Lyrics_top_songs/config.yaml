@@ -5,7 +5,7 @@
 # Last.fm settings
 lastfm:
   username: "sugarsmax"
-  top_tracks_limit: 100  # Expanded from 20
+  top_tracks_limit: 1000  # Fetching top 1000 tracks
 
 # Lyrics provider settings
 # Options: "musixmatch", "genius", "azlyrics"

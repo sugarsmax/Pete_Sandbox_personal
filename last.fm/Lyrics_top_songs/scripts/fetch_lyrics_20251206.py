@@ -41,6 +41,13 @@ CACHE_DIR = PROJECT_DIR / "cache"
 LYRICS_CACHE_DIR = CACHE_DIR / "lyrics"
 TRACKS_CACHE_PATH = CACHE_DIR / "top_tracks.json"
 FETCH_LOG_PATH = CACHE_DIR / "fetch_log.json"
+FAILED_CACHE_PATH = CACHE_DIR / "failed_tracks.json"
+
+# Known instrumental indicators in track names
+INSTRUMENTAL_INDICATORS = [
+    "(instrumental)", "instrumental", "(inst)", 
+    "(inst.)", "- instrumental", "instrumental version"
+]
 
 
 def load_config() -> dict:
@@ -55,6 +62,57 @@ def slugify(text: str) -> str:
     text = re.sub(r"[^\w\s-]", "", text)
     text = re.sub(r"[-\s]+", "_", text)
     return text[:50]  # Limit length
+
+
+def normalize_special_chars(text: str) -> str:
+    """
+    Normalize non-English special characters to ASCII equivalents.
+    
+    Examples:
+        'Björk' -> 'Bjork'
+        'Röyksopp' -> 'Royksopp'
+        'Motörhead' -> 'Motorhead'
+    """
+    import unicodedata
+    # Normalize to decomposed form (separates base char from accents)
+    normalized = unicodedata.normalize('NFD', text)
+    # Remove combining characters (accents, umlauts, etc.)
+    ascii_text = ''.join(c for c in normalized if unicodedata.category(c) != 'Mn')
+    return ascii_text
+
+
+def slugify_artist(artist: str) -> str:
+    """
+    Convert artist name to folder slug, moving articles to end.
+    
+    - Moves 'The', 'A', 'An' from start to end
+    - Normalizes special characters (ö->o, é->e, etc.)
+    
+    Examples:
+        'The Cult' -> 'cult_the'
+        'A Tribe Called Quest' -> 'tribe_called_quest_a'
+        'An Albatross' -> 'albatross_an'
+        'Björk' -> 'bjork'
+        'Röyksopp' -> 'royksopp'
+    """
+    # Normalize special characters first
+    artist = normalize_special_chars(artist)
+    artist_lower = artist.lower().strip()
+    
+    # Move articles to end (check longest first to avoid partial matches)
+    if artist_lower.startswith("the "):
+        artist = artist[4:].strip() + ", The"
+    elif artist_lower.startswith("an "):
+        artist = artist[3:].strip() + ", An"
+    elif artist_lower.startswith("a "):
+        artist = artist[2:].strip() + ", A"
+    
+    slug = slugify(artist)
+    # Clean up any trailing underscore before article
+    slug = re.sub(r"__+", "_", slug)
+    if slug.endswith("_"):
+        slug = slug[:-1]
+    return slug
 
 
 def update_fetch_log(action: str, details: dict) -> None:
@@ -249,7 +307,8 @@ def get_provider(config: dict) -> LyricsProvider:
     
     # Handle provider-specific initialization
     if provider_name == "genius":
-        # API key is read from environment variable in the GeniusProvider class
+        # GeniusProvider handles env var lookup internally
+        # Config api_key is optional (YAML may parse empty section as None)
         genius_config = config.get("lyrics", {}).get("genius") or {}
         api_key = genius_config.get("api_key") if isinstance(genius_config, dict) else None
         return provider_class(api_key=api_key)
@@ -262,11 +321,12 @@ def get_provider(config: dict) -> LyricsProvider:
 # =============================================================================
 
 def get_lyrics_cache_path(artist: str, track: str) -> Path:
-    """Get cache file path for a track's lyrics (organized by artist folder)."""
-    artist_dir = LYRICS_CACHE_DIR / slugify(artist)
+    """Get cache file path for a track's lyrics, organized by artist subfolder."""
+    artist_slug = slugify_artist(artist)  # Use artist-specific slugify (moves "The" to end)
+    track_slug = slugify(track)
+    artist_dir = LYRICS_CACHE_DIR / artist_slug
     artist_dir.mkdir(parents=True, exist_ok=True)
-    filename = f"{slugify(track)}.txt"
-    return artist_dir / filename
+    return artist_dir / f"{track_slug}.txt"
 
 
 def is_lyrics_cached(artist: str, track: str, max_age_days: int = 30) -> bool:
@@ -310,6 +370,31 @@ def load_tracks() -> list:
     return data["tracks"]
 
 
+def load_failed_cache() -> set:
+    """Load set of track keys that previously failed to fetch."""
+    if not FAILED_CACHE_PATH.exists():
+        return set()
+    with open(FAILED_CACHE_PATH, "r") as f:
+        return set(json.load(f))
+
+
+def save_failed_cache(failed_keys: set) -> None:
+    """Save failed track keys to cache."""
+    with open(FAILED_CACHE_PATH, "w") as f:
+        json.dump(sorted(failed_keys), f, indent=2)
+
+
+def get_track_key(artist: str, track: str) -> str:
+    """Create unique key for a track."""
+    return f"{slugify(artist)}::{slugify(track)}"
+
+
+def is_likely_instrumental(track_name: str) -> bool:
+    """Check if track name suggests it's instrumental."""
+    track_lower = track_name.lower()
+    return any(ind in track_lower for ind in INSTRUMENTAL_INDICATORS)
+
+
 # =============================================================================
 # MAIN
 # =============================================================================
@@ -338,8 +423,19 @@ def main():
         action="store_true",
         help="Show lyrics cache status and exit"
     )
+    parser.add_argument(
+        "--retry-failed",
+        action="store_true",
+        help="Retry tracks that previously failed (clears failed cache)"
+    )
     
     args = parser.parse_args()
+    
+    # Handle retry-failed flag
+    if args.retry_failed:
+        if FAILED_CACHE_PATH.exists():
+            FAILED_CACHE_PATH.unlink()
+            print("Cleared failed tracks cache - will retry all.")
     
     # Load config
     config = load_config()
@@ -378,14 +474,20 @@ def main():
                     print(f"  - {track['artist']} - {track['track']}")
         return 0
     
+    # Load failed cache (tracks that previously failed)
+    failed_cache = load_failed_cache()
+    
     # Process tracks
     fetched = 0
     cached = 0
     failed = 0
+    skipped_known_fail = 0
+    skipped_instrumental = 0
     
     for i, track in enumerate(tracks):
         artist = track["artist"]
         track_name = track["track"]
+        track_key = get_track_key(artist, track_name)
         
         print(f"\n[{i+1}/{len(tracks)}] {artist} - {track_name}")
         
@@ -393,6 +495,19 @@ def main():
         if not args.force and is_lyrics_cached(artist, track_name, max_age):
             print("  [CACHED] Lyrics already cached")
             cached += 1
+            continue
+        
+        # Skip known instrumentals
+        if is_likely_instrumental(track_name):
+            print("  [SKIP] Likely instrumental (no lyrics)")
+            skipped_instrumental += 1
+            failed_cache.add(track_key)
+            continue
+        
+        # Skip previously failed (unless --force)
+        if not args.force and track_key in failed_cache:
+            print("  [SKIP] Previously failed")
+            skipped_known_fail += 1
             continue
         
         # Dry run mode
@@ -407,13 +522,19 @@ def main():
             save_lyrics_cache(artist, track_name, lyrics)
             print(f"  [SAVED] {len(lyrics)} characters")
             fetched += 1
+            # Remove from failed cache if it was there
+            failed_cache.discard(track_key)
         else:
             print("  [FAILED] No lyrics retrieved")
             failed += 1
+            failed_cache.add(track_key)
         
         # Rate limiting
         if i < len(tracks) - 1 and not args.test:
             time.sleep(delay)
+    
+    # Save updated failed cache
+    save_failed_cache(failed_cache)
     
     # Summary
     print(f"\n{'='*50}")
@@ -421,6 +542,8 @@ def main():
     print(f"  Already cached: {cached}")
     print(f"  Newly fetched: {fetched}")
     print(f"  Failed: {failed}")
+    print(f"  Skipped (instrumental): {skipped_instrumental}")
+    print(f"  Skipped (prev. failed): {skipped_known_fail}")
     
     if fetched > 0:
         update_fetch_log("lyrics", {

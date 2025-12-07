@@ -44,11 +44,44 @@ def slugify(text: str) -> str:
     return text[:50]
 
 
+def normalize_special_chars(text: str) -> str:
+    """Normalize non-English special characters to ASCII equivalents."""
+    import unicodedata
+    normalized = unicodedata.normalize('NFD', text)
+    ascii_text = ''.join(c for c in normalized if unicodedata.category(c) != 'Mn')
+    return ascii_text
+
+
+def slugify_artist(artist: str) -> str:
+    """
+    Convert artist name to folder slug, moving articles to end.
+    
+    - Moves 'The', 'A', 'An' from start to end
+    - Normalizes special characters (ö->o, é->e, etc.)
+    """
+    import re
+    artist = normalize_special_chars(artist)
+    artist_lower = artist.lower().strip()
+    
+    if artist_lower.startswith("the "):
+        artist = artist[4:].strip() + ", The"
+    elif artist_lower.startswith("an "):
+        artist = artist[3:].strip() + ", An"
+    elif artist_lower.startswith("a "):
+        artist = artist[2:].strip() + ", A"
+    
+    slug = slugify(artist)
+    slug = re.sub(r"__+", "_", slug)
+    if slug.endswith("_"):
+        slug = slug[:-1]
+    return slug
+
+
 def get_lyrics_cache_path(artist: str, track: str) -> Path:
-    """Get cache file path for a track's lyrics (organized by artist folder)."""
-    artist_dir = LYRICS_CACHE_DIR / slugify(artist)
-    filename = f"{slugify(track)}.txt"
-    return artist_dir / filename
+    """Get cache file path for a track's lyrics (artist subfolder structure)."""
+    artist_slug = slugify_artist(artist)  # Moves "The" to end
+    track_slug = slugify(track)
+    return LYRICS_CACHE_DIR / artist_slug / f"{track_slug}.txt"
 
 
 def load_tracks() -> list:
