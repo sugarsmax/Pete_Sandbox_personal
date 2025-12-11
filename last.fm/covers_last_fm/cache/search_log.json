@@ -1,0 +1,790 @@
+{
+  "last_updated": "2025-12-09T15:59:11.969847",
+  "total_searched": 9,
+  "total_with_covers": 2,
+  "searches": {
+    "dave_grohl__josh_homme__trent_reznor__mantra__instrumental_": {
+      "searched_at": "2025-12-09T14:06:55.715588",
+      "status": "error",
+      "url": "https://www.whosampled.com/Dave-Grohl-Josh-Homme-Trent-Reznor/Mantra-instrumental/covered/",
+      "covers_count": 0,
+      "covers": []
+    },
+    "queens_of_the_stone_age__the_blood_is_love": {
+      "searched_at": "2025-12-09T14:07:58.236933",
+      "status": "error",
+      "url": "https://www.whosampled.com/Queens-of-the-Stone-Age/The-Blood-Is-Love/covered/",
+      "covers_count": 0,
+      "covers": []
+    },
+    "death_from_above_1979__turn_it_out": {
+      "searched_at": "2025-12-09T14:09:00.744754",
+      "status": "error",
+      "url": "https://www.whosampled.com/Death-from-Above-1979/Turn-It-Out/covered/",
+      "covers_count": 0,
+      "covers": []
+    },
+    "death_from_above_1979__nvr_4evr": {
+      "searched_at": "2025-12-09T14:05:10.123975",
+      "status": "error",
+      "url": "https://www.whosampled.com/Death-from-Above-1979/NVR-4EVR/covered/",
+      "covers_count": 0,
+      "covers": []
+    },
+    "death_from_above_1979__going_steady": {
+      "searched_at": "2025-12-09T14:05:42.642177",
+      "status": "error",
+      "url": "https://www.whosampled.com/Death-from-Above-1979/Going-Steady/covered/",
+      "covers_count": 0,
+      "covers": []
+    },
+    "queens_of_the_stone_age__misfit_love": {
+      "searched_at": "2025-12-09T13:59:50.162619",
+      "status": "error",
+      "url": "https://www.whosampled.com/Queens-of-the-Stone-Age/Misfit-Love/covered/",
+      "covers_count": 0,
+      "covers": []
+    },
+    "them_crooked_vultures__spinning_in_daffodils": {
+      "searched_at": "2025-12-09T14:00:22.678337",
+      "status": "error",
+      "url": "https://www.whosampled.com/Them-Crooked-Vultures/Spinning-in-Daffodils/covered/",
+      "covers_count": 0,
+      "covers": []
+    },
+    "alice_in_chains__would_": {
+      "searched_at": "2025-12-09T14:39:06.799428",
+      "status": "found",
+      "url": "https://www.whosampled.com/Alice-in-Chains/Would%3F/covered/",
+      "covers_count": 13,
+      "covers": [
+        {
+          "cover_track": "Would?",
+          "cover_artist": "Opeth",
+          "cover_year": "2008",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/32750/Opeth-Would%3F-Alice-in-Chains-Would%3F/"
+        },
+        {
+          "cover_track": "Would?",
+          "cover_artist": "Metallica",
+          "cover_year": "2020",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/799665/Metallica-Would%3F-Alice-in-Chains-Would%3F/"
+        },
+        {
+          "cover_track": "Would?",
+          "cover_artist": "Queens of Dogtown",
+          "cover_year": "2011",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/131761/Queens-of-Dogtown-Would%3F-Alice-in-Chains-Would%3F/"
+        },
+        {
+          "cover_track": "Would?",
+          "cover_artist": "Ensoph",
+          "cover_year": "2009",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/525223/Ensoph-Would%3F-Alice-in-Chains-Would%3F/"
+        },
+        {
+          "cover_track": "Would?",
+          "cover_artist": "The Otolith",
+          "cover_year": "2020",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/1351177/The-Otolith-Would%3F-Alice-in-Chains-Would%3F/"
+        },
+        {
+          "cover_track": "Would? (Piano Ballad Cover)",
+          "cover_artist": "Anthony Vincent feat. Violet Orlandi",
+          "cover_year": "2021",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/817030/Anthony-Vincent-Violet-Orlandi-Would%3F-(Piano-Ballad-Cover)-Alice-in-Chains-Would%3F/"
+        },
+        {
+          "cover_track": "Would",
+          "cover_artist": "Weiner",
+          "cover_year": "2022",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/1137774/Weiner-Would-Alice-in-Chains-Would%3F/"
+        },
+        {
+          "cover_track": "Would?",
+          "cover_artist": "The New Dominions",
+          "cover_year": "2002",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/683760/The-New-Dominions-Would%3F-Alice-in-Chains-Would%3F/"
+        },
+        {
+          "cover_track": "Would?",
+          "cover_artist": "AKODA",
+          "cover_year": "2022",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/1137747/AKODA-Would%3F-Alice-in-Chains-Would%3F/"
+        },
+        {
+          "cover_track": "Would?",
+          "cover_artist": "Juan Carlos Cano",
+          "cover_year": "2021",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/890015/Juan-Carlos-Cano-Would%3F-Alice-in-Chains-Would%3F/"
+        },
+        {
+          "cover_track": "Would",
+          "cover_artist": "Déjà Vu (Cover Band)",
+          "cover_year": "2011",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/744276/D%C3%A9j%C3%A0-Vu-(Cover-Band)-Would-Alice-in-Chains-Would%3F/"
+        },
+        {
+          "cover_track": "Would?",
+          "cover_artist": "Reese Van Riper",
+          "cover_year": "2023",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/1209567/Reese-Van-Riper-Would%3F-Alice-in-Chains-Would%3F/"
+        },
+        {
+          "cover_track": "Would?",
+          "cover_artist": "Brass Against feat. Samuel Hope",
+          "cover_year": "2023",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/1326079/Brass-Against-Samuel-Hope-Would%3F-Alice-in-Chains-Would%3F/"
+        }
+      ]
+    },
+    "death_from_above_1979__sexy_results": {
+      "searched_at": "2025-12-09T14:43:29.761900",
+      "status": "not_found",
+      "url": "https://www.whosampled.com/Death-from-Above-1979/Sexy-Results/covered/",
+      "covers_count": 0,
+      "covers": []
+    },
+    "deadmau5__messages_from_nowhere": {
+      "searched_at": "2025-12-09T14:44:07.847782",
+      "status": "not_found",
+      "url": "https://www.whosampled.com/deadmau5/Messages-from-nowhere/covered/",
+      "covers_count": 0,
+      "covers": []
+    },
+    "led_zeppelin__when_the_levee_breaks": {
+      "searched_at": "2025-12-09T14:46:13.658949",
+      "status": "found",
+      "url": "https://www.whosampled.com/Led-Zeppelin/When-the-Levee-Breaks/covered/",
+      "covers_count": 11,
+      "covers": [
+        {
+          "cover_track": "When the Levee Breaks",
+          "cover_artist": "A Perfect Circle",
+          "cover_year": "2004",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/41822/A-Perfect-Circle-When-the-Levee-Breaks-Led-Zeppelin-When-the-Levee-Breaks/"
+        },
+        {
+          "cover_track": "When the Levee Breaks",
+          "cover_artist": "W.A.S.P.",
+          "cover_year": "1998",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/29917/W.A.S.P.-When-the-Levee-Breaks-Led-Zeppelin-When-the-Levee-Breaks/"
+        },
+        {
+          "cover_track": "When the Levee Breaks (Part 1)",
+          "cover_artist": "Magic Slim feat. Billy Branch feat. James Cotton",
+          "cover_year": "1999",
+          "cover_genre": "Jazz / Blues",
+          "cover_url": "https://www.whosampled.com/cover/76023/Magic-Slim-Billy-Branch-James-Cotton-When-the-Levee-Breaks-(Part-1)-Led-Zeppelin-When-the-Levee-Breaks/"
+        },
+        {
+          "cover_track": "When the Levee Breaks",
+          "cover_artist": "Judge",
+          "cover_year": "1990",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/41824/Judge-When-the-Levee-Breaks-Led-Zeppelin-When-the-Levee-Breaks/"
+        },
+        {
+          "cover_track": "When the Levee Breaks",
+          "cover_artist": "Stream of Passion",
+          "cover_year": "2006",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/41827/Stream-of-Passion-When-the-Levee-Breaks-Led-Zeppelin-When-the-Levee-Breaks/"
+        },
+        {
+          "cover_track": "When the Levee Breaks",
+          "cover_artist": "Great White",
+          "cover_year": "1999",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/74986/Great-White-When-the-Levee-Breaks-Led-Zeppelin-When-the-Levee-Breaks/"
+        },
+        {
+          "cover_track": "When the Levee Breaks",
+          "cover_artist": "Dread Zeppelin",
+          "cover_year": "1991",
+          "cover_genre": "Reggae / Dub",
+          "cover_url": "https://www.whosampled.com/cover/467596/Dread-Zeppelin-When-the-Levee-Breaks-Led-Zeppelin-When-the-Levee-Breaks/"
+        },
+        {
+          "cover_track": "When the Levee Breaks",
+          "cover_artist": "Iron Horse",
+          "cover_year": "2005",
+          "cover_genre": "Country / Folk",
+          "cover_url": "https://www.whosampled.com/cover/321598/Iron-Horse-When-the-Levee-Breaks-Led-Zeppelin-When-the-Levee-Breaks/"
+        },
+        {
+          "cover_track": "When the Levee Breaks",
+          "cover_artist": "Kristin Hersh",
+          "cover_year": "1994",
+          "cover_genre": "Country / Folk",
+          "cover_url": "https://www.whosampled.com/cover/225145/Kristin-Hersh-When-the-Levee-Breaks-Led-Zeppelin-When-the-Levee-Breaks/"
+        },
+        {
+          "cover_track": "When the Levee Breaks",
+          "cover_artist": "Beth Hart",
+          "cover_year": "2022",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/1172562/Beth-Hart-When-the-Levee-Breaks-Led-Zeppelin-When-the-Levee-Breaks/"
+        },
+        {
+          "cover_track": "When the Levee Breaks",
+          "cover_artist": "Roadsaw",
+          "cover_year": "2006",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/1355568/Roadsaw-When-the-Levee-Breaks-Led-Zeppelin-When-the-Levee-Breaks/"
+        }
+      ]
+    },
+    "soundgarden__room_a_thousand_years_wide": {
+      "searched_at": "2025-12-09T14:47:07.685320",
+      "status": "not_found",
+      "url": "https://www.whosampled.com/Soundgarden/Room-a-Thousand-Years-Wide/covered/",
+      "covers_count": 0,
+      "covers": []
+    },
+    "radiohead__optimistic": {
+      "searched_at": "2025-12-09T14:48:18.464266",
+      "status": "not_found",
+      "url": "https://www.whosampled.com/Radiohead/Optimistic/covered/",
+      "covers_count": 0,
+      "covers": []
+    },
+    "reignwolf__alligator": {
+      "searched_at": "2025-12-09T15:29:01.925992",
+      "status": "not_found",
+      "url": "https://www.whosampled.com/Reignwolf/Alligator/covered/",
+      "covers_count": 0,
+      "covers": []
+    },
+    "depeche_mode__i_feel_you": {
+      "searched_at": "2025-12-09T15:33:31.078089",
+      "status": "found",
+      "url": "https://www.whosampled.com/Depeche-Mode/I-Feel-You/covered/",
+      "covers_count": 15,
+      "covers": [
+        {
+          "cover_track": "I Feel You",
+          "cover_artist": "Apollo 440",
+          "cover_year": "1998",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/20884/Apollo-440-I-Feel-You-Depeche-Mode-I-Feel-You/"
+        },
+        {
+          "cover_track": "I Feel You",
+          "cover_artist": "Placebo",
+          "cover_year": "2003",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/20886/Placebo-I-Feel-You-Depeche-Mode-I-Feel-You/"
+        },
+        {
+          "cover_track": "I Feel You",
+          "cover_artist": "Slaves to the Symbol",
+          "cover_year": "2004",
+          "cover_genre": "Electronic / Dance",
+          "cover_url": "https://www.whosampled.com/cover/101259/Slaves-to-the-Symbol-I-Feel-You-Depeche-Mode-I-Feel-You/"
+        },
+        {
+          "cover_track": "I Feel You",
+          "cover_artist": "Samael",
+          "cover_year": "2005",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/101260/Samael-I-Feel-You-Depeche-Mode-I-Feel-You/"
+        },
+        {
+          "cover_track": "I Feel You",
+          "cover_artist": "Chateau Pop",
+          "cover_year": "2017",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/533946/Chateau-Pop-I-Feel-You-Depeche-Mode-I-Feel-You/"
+        },
+        {
+          "cover_track": "I.F.Y. (I Feel You)",
+          "cover_artist": "Vader",
+          "cover_year": "1995",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/101247/Vader-I.F.Y.-(I-Feel-You)-Depeche-Mode-I-Feel-You/"
+        },
+        {
+          "cover_track": "I Feel You",
+          "cover_artist": "Studio-X",
+          "cover_year": "2011",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/101263/Studio-X-2-I-Feel-You-Depeche-Mode-I-Feel-You/"
+        },
+        {
+          "cover_track": "I Feel You",
+          "cover_artist": "Škwor",
+          "cover_year": "2003",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/184716/%C5%A0kwor-I-Feel-You-Depeche-Mode-I-Feel-You/"
+        },
+        {
+          "cover_track": "I Feel You",
+          "cover_artist": "Collide",
+          "cover_year": "2009",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/28669/Collide-I-Feel-You-Depeche-Mode-I-Feel-You/"
+        },
+        {
+          "cover_track": "I Feel You",
+          "cover_artist": "Zed & Monsoon",
+          "cover_year": "2015",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/510653/Zed-%26-Monsoon-I-Feel-You-Depeche-Mode-I-Feel-You/"
+        },
+        {
+          "cover_track": "I Feel You",
+          "cover_artist": "Johnny Marr",
+          "cover_year": "2015",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/362116/Johnny-Marr-I-Feel-You-Depeche-Mode-I-Feel-You/"
+        },
+        {
+          "cover_track": "I Feel You",
+          "cover_artist": "Helalyn Flowers",
+          "cover_year": "2009",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/101262/Helalyn-Flowers-I-Feel-You-Depeche-Mode-I-Feel-You/"
+        },
+        {
+          "cover_track": "I Feel You",
+          "cover_artist": "Bebo Best feat. Evelins feat. Mr. Lova",
+          "cover_year": "2010",
+          "cover_genre": "Jazz / Blues",
+          "cover_url": "https://www.whosampled.com/cover/542392/Bebo-Best-Evelins-Mr.-Lova-I-Feel-You-Depeche-Mode-I-Feel-You/"
+        },
+        {
+          "cover_track": "I Feel You",
+          "cover_artist": "Claire's Birthday",
+          "cover_year": "2001",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/101249/Claire%27s-Birthday-I-Feel-You-Depeche-Mode-I-Feel-You/"
+        },
+        {
+          "cover_track": "I Feel You",
+          "cover_artist": "The Narrow",
+          "cover_year": "2005",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/144162/The-Narrow-I-Feel-You-Depeche-Mode-I-Feel-You/"
+        }
+      ]
+    },
+    "mad_season__november_hotel": {
+      "searched_at": "2025-12-09T15:37:56.287740",
+      "status": "not_found",
+      "url": "https://www.whosampled.com/Mad-Season/November-Hotel/covered/",
+      "covers_count": 0,
+      "covers": []
+    },
+    "u2__i_still_haven_t_found_what_i_m_looking_for": {
+      "searched_at": "2025-12-09T15:44:40.699014",
+      "status": "found",
+      "url": "https://www.whosampled.com/U2/I-Still-Haven%27t-Found-What-I%27m-Looking-For/covered/",
+      "covers_count": 14,
+      "covers": [
+        {
+          "cover_track": "Ishfwilf",
+          "cover_artist": "Disturbed",
+          "cover_year": "2010",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/80210/Disturbed-Ishfwilf-U2-I-Still-Haven%27t-Found-What-I%27m-Looking-For/"
+        },
+        {
+          "cover_track": "I Still Haven't Found What I'm Looking For",
+          "cover_artist": "The Chimes",
+          "cover_year": "1990",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/5581/The-Chimes-I-Still-Haven%27t-Found-What-I%27m-Looking-For-U2-I-Still-Haven%27t-Found-What-I%27m-Looking-For/"
+        },
+        {
+          "cover_track": "I Still Haven't Found What I'm Looking For",
+          "cover_artist": "Coco Freeman feat. U2",
+          "cover_year": "2006",
+          "cover_genre": "World / Latin",
+          "cover_url": "https://www.whosampled.com/cover/29235/Coco-Freeman-U2-I-Still-Haven%27t-Found-What-I%27m-Looking-For-U2-I-Still-Haven%27t-Found-What-I%27m-Looking-For/"
+        },
+        {
+          "cover_track": "I Still Haven't Found What I'm Looking For",
+          "cover_artist": "Badesalz",
+          "cover_year": "1991",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/100101/Badesalz-I-Still-Haven%27t-Found-What-I%27m-Looking-For-U2-I-Still-Haven%27t-Found-What-I%27m-Looking-For/"
+        },
+        {
+          "cover_track": "I Still Haven't Found What I'm Looking For",
+          "cover_artist": "Apollinare Rossi",
+          "cover_year": "2007",
+          "cover_genre": "Jazz / Blues",
+          "cover_url": "https://www.whosampled.com/cover/24929/Apollinare-Rossi-I-Still-Haven%27t-Found-What-I%27m-Looking-For-U2-I-Still-Haven%27t-Found-What-I%27m-Looking-For/"
+        },
+        {
+          "cover_track": "I Still Haven't Found What I'm Looking for (Special Edit Radio Mix)",
+          "cover_artist": "Negativland",
+          "cover_year": "1991",
+          "cover_genre": "Other",
+          "cover_url": "https://www.whosampled.com/cover/71735/Negativland-I-Still-Haven%27t-Found-What-I%27m-Looking-for-(Special-Edit-Radio-Mix)-U2-I-Still-Haven%27t-Found-What-I%27m-Looking-For/"
+        },
+        {
+          "cover_track": "I Still Haven't Found What I'm Looking For",
+          "cover_artist": "Gregorian",
+          "cover_year": "2000",
+          "cover_genre": "Other",
+          "cover_url": "https://www.whosampled.com/cover/27464/Gregorian-I-Still-Haven%27t-Found-What-I%27m-Looking-For-U2-I-Still-Haven%27t-Found-What-I%27m-Looking-For/"
+        },
+        {
+          "cover_track": "I Still Haven't Found What I'm Looking For",
+          "cover_artist": "Chumbawamba",
+          "cover_year": "1996",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/143576/Chumbawamba-I-Still-Haven%27t-Found-What-I%27m-Looking-For-U2-I-Still-Haven%27t-Found-What-I%27m-Looking-For/"
+        },
+        {
+          "cover_track": "I Still Haven't Found What I'm Looking For",
+          "cover_artist": "Celtic Thunder",
+          "cover_year": "2010",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/79954/Celtic-Thunder-I-Still-Haven%27t-Found-What-I%27m-Looking-For-U2-I-Still-Haven%27t-Found-What-I%27m-Looking-For/"
+        },
+        {
+          "cover_track": "I Still Haven't Found What I'm Looking For",
+          "cover_artist": "The Persuasions",
+          "cover_year": "2005",
+          "cover_genre": "Soul / Funk / Disco",
+          "cover_url": "https://www.whosampled.com/cover/128717/The-Persuasions-I-Still-Haven%27t-Found-What-I%27m-Looking-For-U2-I-Still-Haven%27t-Found-What-I%27m-Looking-For/"
+        },
+        {
+          "cover_track": "I Still Haven't Found What I'm Looking For",
+          "cover_artist": "Scarlett Johansson feat. Bono",
+          "cover_year": "2021",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/969561/Scarlett-Johansson-Bono-I-Still-Haven%27t-Found-What-I%27m-Looking-For-U2-I-Still-Haven%27t-Found-What-I%27m-Looking-For/"
+        },
+        {
+          "cover_track": "I Still Haven't Found What I'm Looking For",
+          "cover_artist": "Zita Swoon",
+          "cover_year": "2008",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/77499/Zita-Swoon-I-Still-Haven%27t-Found-What-I%27m-Looking-For-U2-I-Still-Haven%27t-Found-What-I%27m-Looking-For/"
+        },
+        {
+          "cover_track": "I Still Haven't Found What I'm Looking For",
+          "cover_artist": "Booker T. & the M.G.'s",
+          "cover_year": "1994",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/152436/Booker-T.-%26-the-M.G.%27s-I-Still-Haven%27t-Found-What-I%27m-Looking-For-U2-I-Still-Haven%27t-Found-What-I%27m-Looking-For/"
+        },
+        {
+          "cover_track": "I Still Haven't Found What I'm Looking For",
+          "cover_artist": "The Queen & King",
+          "cover_year": "2017",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/524342/The-Queen-%26-King-I-Still-Haven%27t-Found-What-I%27m-Looking-For-U2-I-Still-Haven%27t-Found-What-I%27m-Looking-For/"
+        }
+      ]
+    },
+    "duran_duran__save_a_prayer": {
+      "searched_at": "2025-12-09T15:52:38.578055",
+      "status": "found",
+      "url": "https://www.whosampled.com/Duran-Duran/Save-a-Prayer/covered/",
+      "covers_count": 16,
+      "covers": [
+        {
+          "cover_track": "Save a Prayer",
+          "cover_artist": "Tony Hadley",
+          "cover_year": "1997",
+          "cover_genre": "Other",
+          "cover_url": "https://www.whosampled.com/cover/20873/Tony-Hadley-Save-a-Prayer-Duran-Duran-Save-a-Prayer/"
+        },
+        {
+          "cover_track": "Save a Prayer",
+          "cover_artist": "Eagles of Death Metal",
+          "cover_year": "2015",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/387320/Eagles-of-Death-Metal-Save-a-Prayer-Duran-Duran-Save-a-Prayer/"
+        },
+        {
+          "cover_track": "Save a Prayer",
+          "cover_artist": "56K feat. Bejay",
+          "cover_year": "2003",
+          "cover_genre": "Electronic / Dance",
+          "cover_url": "https://www.whosampled.com/cover/14793/56K-Bejay-Save-a-Prayer-Duran-Duran-Save-a-Prayer/"
+        },
+        {
+          "cover_track": "Save a Prayer",
+          "cover_artist": "David Mead",
+          "cover_year": "2014",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/476754/David-Mead-Save-a-Prayer-Duran-Duran-Save-a-Prayer/"
+        },
+        {
+          "cover_track": "Save a Prayer",
+          "cover_artist": "Gregorian",
+          "cover_year": "2000",
+          "cover_genre": "World / Latin",
+          "cover_url": "https://www.whosampled.com/cover/19535/Gregorian-Save-a-Prayer-Duran-Duran-Save-a-Prayer/"
+        },
+        {
+          "cover_track": "Save a Prayer",
+          "cover_artist": "Supernova",
+          "cover_year": "2010",
+          "cover_genre": "Electronic / Dance",
+          "cover_url": "https://www.whosampled.com/cover/496385/Supernova-Save-a-Prayer-Duran-Duran-Save-a-Prayer/"
+        },
+        {
+          "cover_track": "Save a Prayer",
+          "cover_artist": "Eve's Plum",
+          "cover_year": "1997",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/58981/Eve%27s-Plum-Save-a-Prayer-Duran-Duran-Save-a-Prayer/"
+        },
+        {
+          "cover_track": "Save a Prayer",
+          "cover_artist": "Dirty Vegas",
+          "cover_year": "2015",
+          "cover_genre": "Electronic / Dance",
+          "cover_url": "https://www.whosampled.com/cover/332476/Dirty-Vegas-Save-a-Prayer-Duran-Duran-Save-a-Prayer/"
+        },
+        {
+          "cover_track": "Save a Prayer",
+          "cover_artist": "Kate Walsh",
+          "cover_year": "2010",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/494652/Kate-Walsh-Save-a-Prayer-Duran-Duran-Save-a-Prayer/"
+        },
+        {
+          "cover_track": "Save a Prayer",
+          "cover_artist": "Cut Patrol feat. Louise Hamilton",
+          "cover_year": "1992",
+          "cover_genre": "Electronic / Dance",
+          "cover_url": "https://www.whosampled.com/cover/475924/Cut-Patrol-Louise-Hamilton-Save-a-Prayer-Duran-Duran-Save-a-Prayer/"
+        },
+        {
+          "cover_track": "Save a Prayer",
+          "cover_artist": "D.D. 92",
+          "cover_year": "1992",
+          "cover_genre": "Electronic / Dance",
+          "cover_url": "https://www.whosampled.com/cover/302641/D.D.-92-Save-a-Prayer-Duran-Duran-Save-a-Prayer/"
+        },
+        {
+          "cover_track": "Save a Prayer",
+          "cover_artist": "Pollyanna (Australian Rock Band)",
+          "cover_year": "1999",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/515712/Pollyanna-(Australian-Rock-Band)-Save-a-Prayer-Duran-Duran-Save-a-Prayer/"
+        },
+        {
+          "cover_track": "Dred Mosque",
+          "cover_artist": "Satanicpornocultshop",
+          "cover_year": "2003",
+          "cover_genre": "Electronic / Dance",
+          "cover_url": "https://www.whosampled.com/cover/138758/Satanicpornocultshop-Dred-Mosque-Duran-Duran-Save-a-Prayer/"
+        },
+        {
+          "cover_track": "Save a Prayer",
+          "cover_artist": "G.M.T. One & Jimmy",
+          "cover_year": "1987",
+          "cover_genre": "Electronic / Dance",
+          "cover_url": "https://www.whosampled.com/cover/522941/G.M.T.-One-%26-Jimmy-Save-a-Prayer-Duran-Duran-Save-a-Prayer/"
+        },
+        {
+          "cover_track": "Oração",
+          "cover_artist": "Tonny Brasil feat. Açaí Machine",
+          "cover_year": "1998",
+          "cover_genre": "World / Latin",
+          "cover_url": "https://www.whosampled.com/cover/1066260/Tonny-Brasil-A%C3%A7a%C3%AD-Machine-Ora%C3%A7%C3%A3o-Duran-Duran-Save-a-Prayer/"
+        },
+        {
+          "cover_track": "Save a Prayer",
+          "cover_artist": "...So Hate Is...",
+          "cover_year": "2017",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/520165/...So-Hate-Is...-Save-a-Prayer-Duran-Duran-Save-a-Prayer/"
+        }
+      ]
+    },
+    "niteppl__schatner": {
+      "searched_at": "2025-12-09T15:54:41.813511",
+      "status": "not_found",
+      "url": "https://www.whosampled.com/Niteppl/Schatner/covered/",
+      "covers_count": 0,
+      "covers": []
+    },
+    "death_from_above_1979__nomad": {
+      "searched_at": "2025-12-09T15:54:45.245920",
+      "status": "no_covers",
+      "url": "https://www.whosampled.com/Death-from-Above-1979/Nomad/covered/",
+      "covers_count": 0,
+      "covers": []
+    },
+    "kinski__schedule_for_using_pillows___beanbags": {
+      "searched_at": "2025-12-09T15:54:49.253680",
+      "status": "no_covers",
+      "url": "https://www.whosampled.com/Kinski/Schedule-for-Using-Pillows-and-Beanbags/covered/",
+      "covers_count": 0,
+      "covers": []
+    },
+    "death_from_above_1979__white_is_red": {
+      "searched_at": "2025-12-09T15:54:52.461556",
+      "status": "no_covers",
+      "url": "https://www.whosampled.com/Death-from-Above-1979/White-Is-Red/covered/",
+      "covers_count": 0,
+      "covers": []
+    },
+    "jack_white__hypocritical_kiss": {
+      "searched_at": "2025-12-09T15:54:58.929090",
+      "status": "no_covers",
+      "url": "https://www.whosampled.com/Jack-White/Hypocritical-Kiss/covered/",
+      "covers_count": 0,
+      "covers": []
+    },
+    "queens_of_the_stone_age__i_sat_by_the_ocean": {
+      "searched_at": "2025-12-09T15:55:02.158034",
+      "status": "no_covers",
+      "url": "https://www.whosampled.com/Queens-of-the-Stone-Age/I-Sat-by-the-Ocean/covered/",
+      "covers_count": 0,
+      "covers": []
+    },
+    "jamiroquai__cloud_9": {
+      "searched_at": "2025-12-09T15:55:05.505206",
+      "status": "no_covers",
+      "url": "https://www.whosampled.com/Jamiroquai/Cloud-9/covered/",
+      "covers_count": 0,
+      "covers": []
+    },
+    "tool__parabola": {
+      "searched_at": "2025-12-09T15:55:09.034873",
+      "status": "no_covers",
+      "url": "https://www.whosampled.com/Tool/Parabola/covered/",
+      "covers_count": 0,
+      "covers": []
+    },
+    "alice_in_chains__no_excuses": {
+      "searched_at": "2025-12-09T15:57:55.169025",
+      "status": "found",
+      "url": "https://www.whosampled.com/Alice-in-Chains/No-Excuses/covered/",
+      "covers_count": 7,
+      "covers": [
+        {
+          "cover_track": "No Excuses",
+          "cover_artist": "Mike Massé feat. Bryce Bloom feat. Kory Montgomery",
+          "cover_year": "2015",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/414237/Mike-Mass%C3%A9-Bryce-Bloom-Kory-Montgomery-No-Excuses-Alice-in-Chains-No-Excuses/"
+        },
+        {
+          "cover_track": "No Exclusions",
+          "cover_artist": "ApologetiX",
+          "cover_year": "2017",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/648686/ApologetiX-No-Exclusions-Alice-in-Chains-No-Excuses/"
+        },
+        {
+          "cover_track": "No Excuses",
+          "cover_artist": "Sponge",
+          "cover_year": "2024",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/1250790/Sponge-No-Excuses-Alice-in-Chains-No-Excuses/"
+        },
+        {
+          "cover_track": "No Excuses",
+          "cover_artist": "Doctor Coffee",
+          "cover_year": "2022",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/1137780/Doctor-Coffee-No-Excuses-Alice-in-Chains-No-Excuses/"
+        },
+        {
+          "cover_track": "No Excuses",
+          "cover_artist": "Room 302",
+          "cover_year": "2022",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/1137784/Room-302-No-Excuses-Alice-in-Chains-No-Excuses/"
+        },
+        {
+          "cover_track": "No Excuses",
+          "cover_artist": "I Love You Alien",
+          "cover_year": "2022",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/1137776/I-Love-You-Alien-No-Excuses-Alice-in-Chains-No-Excuses/"
+        },
+        {
+          "cover_track": "No Excuses",
+          "cover_artist": "Juan Carlos Cano",
+          "cover_year": "2021",
+          "cover_genre": "Rock / Pop",
+          "cover_url": "https://www.whosampled.com/cover/890218/Juan-Carlos-Cano-No-Excuses-Alice-in-Chains-No-Excuses/"
+        }
+      ]
+    },
+    "alice_in_chains__i_stay_away": {
+      "searched_at": "2025-12-09T15:58:01.385864",
+      "status": "no_covers",
+      "url": "https://www.whosampled.com/Alice-in-Chains/I-Stay-Away/covered/",
+      "covers_count": 0,
+      "covers": []
+    },
+    "alice_in_chains__rotten_apple": {
+      "searched_at": "2025-12-09T15:58:10.702650",
+      "status": "no_covers",
+      "url": "https://www.whosampled.com/Alice-in-Chains/Rotten-Apple/covered/",
+      "covers_count": 0,
+      "covers": []
+    },
+    "alice_in_chains__what_the_hell_have_i": {
+      "searched_at": "2025-12-09T15:58:19.789153",
+      "status": "no_covers",
+      "url": "https://www.whosampled.com/Alice-in-Chains/What-The-Hell-Have-I/covered/",
+      "covers_count": 0,
+      "covers": []
+    },
+    "alice_in_chains__dam_that_river": {
+      "searched_at": "2025-12-09T15:58:28.875210",
+      "status": "no_covers",
+      "url": "https://www.whosampled.com/Alice-in-Chains/Dam-That-River/covered/",
+      "covers_count": 0,
+      "covers": []
+    },
+    "alice_in_chains__put_you_down": {
+      "searched_at": "2025-12-09T15:58:37.969661",
+      "status": "no_covers",
+      "url": "https://www.whosampled.com/Alice-in-Chains/Put-You-Down/covered/",
+      "covers_count": 0,
+      "covers": []
+    },
+    "alice_in_chains__dirt": {
+      "searched_at": "2025-12-09T15:58:47.064456",
+      "status": "no_covers",
+      "url": "https://www.whosampled.com/Alice-in-Chains/Dirt/covered/",
+      "covers_count": 0,
+      "covers": []
+    },
+    "alice_in_chains__them_bones": {
+      "searched_at": "2025-12-09T15:58:56.163816",
+      "status": "no_covers",
+      "url": "https://www.whosampled.com/Alice-in-Chains/Them-Bones/covered/",
+      "covers_count": 0,
+      "covers": []
+    },
+    "alice_in_chains__nutshell": {
+      "searched_at": "2025-12-09T15:59:05.256634",
+      "status": "no_covers",
+      "url": "https://www.whosampled.com/Alice-in-Chains/Nutshell/covered/",
+      "covers_count": 0,
+      "covers": []
+    }
+  }
+}
