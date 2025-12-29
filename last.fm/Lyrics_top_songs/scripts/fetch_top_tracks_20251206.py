@@ -155,7 +155,8 @@ def fetch_top_tracks_from_lastfm(username: str, limit: int, test_mode: bool = Fa
         user = network.get_user(username)
         
         # Fetch extra tracks to account for filtered classical tracks
-        fetch_limit = int(limit * 1.5)  # Fetch 50% more to compensate for filtering
+        # Last.fm API max is 1000 per request
+        fetch_limit = min(int(limit * 1.2), 1000)  # Cap at API max
         top_tracks = user.get_top_tracks(period=pylast.PERIOD_OVERALL, limit=fetch_limit)
         
         tracks = []

@@ -9,16 +9,16 @@ on run {input, parameters}
 	end tell
 	
 
-	-- Create hyphen versions for WhoSampled (convert spaces to hyphens)
+	-- Create underscore versions for WhoSampled (convert spaces to underscores)
 	set AppleScript's text item delimiters to " "
-	set artist_hyphen to (text items of artist_) as string
-	set AppleScript's text item delimiters to "-"
-	set artist_hyphen to artist_hyphen as string
+	set artist_underscore to (text items of artist_) as string
+	set AppleScript's text item delimiters to "_"
+	set artist_underscore to artist_underscore as string
 
-	set AppleScript's text item delimiters to " "
-	set name_hyphen to (text items of name_) as string
-	set AppleScript's text item delimiters to "-"
-	set name_hyphen to name_hyphen as string
+	set AppleScript's text item delimiters to "%20"
+	set name_underscore to (text items of name_) as string
+	set AppleScript's text item delimiters to "_"
+	set name_underscore to name_underscore as string
 	
 
 	-- Extract the track ID from the Spotify URL
@@ -36,12 +36,12 @@ on run {input, parameters}
 
 	set youtube_url to "https://www.youtube.com/results?search_query=" & artist_ & " " & name_
 	
-	set whosampled_url to "https://www.whosampled.com/" & artist_hyphen & "/" & name_hyphen
+	set whosampled_url to "https://www.whosampled.com/" & artist_underscore & "/" & name_underscore
 
 	-- Display the track name and URL in a dialog box for verification
-	display dialog "Artist: " & artist_ & return & "Name: " & name_hyphen
+	display dialog "Artist: " & artist_ & return & "Name: " & name_underscore
 	
-	tell application "Safari"
+	tell application "Google Chrome"
 		activate
 		open location spotify_URL
 		open location lastfm_my_top

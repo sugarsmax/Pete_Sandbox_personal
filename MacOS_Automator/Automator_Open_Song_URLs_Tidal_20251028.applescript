@@ -25,34 +25,16 @@ on run {input, parameters}
 		-- Extract the text parameter
 		set textStart to offset of "text=" in shareURL
 		set textPart to text (textStart + 5) through -1 of shareURL
-		-- Find the end of the text parameter (either & or end of string)
 		set textEnd to offset of "&" in textPart
 		if textEnd > 0 then
 			set textPart to text 1 through (textEnd - 1) of textPart
 		end if
 		
-		-- Decode URL-encoded characters (decode %25 last to avoid double-decoding)
-		-- Common characters
+		-- Decode URL-encoded characters
 		set textPart to replace_text(textPart, "%20", " ")
-		set textPart to replace_text(textPart, "%27", "'")
-		set textPart to replace_text(textPart, "%21", "!")
-		set textPart to replace_text(textPart, "%22", "\"")
-		set textPart to replace_text(textPart, "%26", "&")
-		set textPart to replace_text(textPart, "%2B", "+")
-		set textPart to replace_text(textPart, "%3D", "=")
-		set textPart to replace_text(textPart, "%3F", "?")
-		-- URL structure characters
 		set textPart to replace_text(textPart, "%0A", " ")
-		set textPart to replace_text(textPart, "%0D", " ")
 		set textPart to replace_text(textPart, "%3A", ":")
 		set textPart to replace_text(textPart, "%2F", "/")
-		set textPart to replace_text(textPart, "%23", "#")
-		set textPart to replace_text(textPart, "%5B", "[")
-		set textPart to replace_text(textPart, "%5D", "]")
-		set textPart to replace_text(textPart, "%7B", "{")
-		set textPart to replace_text(textPart, "%7D", "}")
-		-- Percent sign last (to avoid double-decoding)
-		set textPart to replace_text(textPart, "%25", "%")
 		
 		-- Parse "Listen to [TRACK] by [ARTIST]" format
 		if textPart contains "Listen to" and textPart contains " by " then
@@ -112,14 +94,20 @@ on run {input, parameters}
 		end if
 	end if
 	
-	-- Create hyphenated versions for WhoSampled (convert spaces to hyphens)
+	-- Create underscore versions for other URLs and hyphenated versions for WhoSampled
 	set AppleScript's text item delimiters to " "
+	set artist_underscore to (text items of artist_) as string
 	set artist_hyphen to (text items of artist_) as string
+	set AppleScript's text item delimiters to "_"
+	set artist_underscore to artist_underscore as string
 	set AppleScript's text item delimiters to "-"
 	set artist_hyphen to artist_hyphen as string
 
 	set AppleScript's text item delimiters to " "
+	set name_underscore to (text items of name_) as string
 	set name_hyphen to (text items of name_) as string
+	set AppleScript's text item delimiters to "_"
+	set name_underscore to name_underscore as string
 	set AppleScript's text item delimiters to "-"
 	set name_hyphen to name_hyphen as string
 	
@@ -131,8 +119,8 @@ on run {input, parameters}
 	set youtube_url to "https://www.youtube.com/results?search_query=" & artist_ & " " & name_
 	set whosampled_url to "https://www.whosampled.com/" & artist_hyphen & "/" & name_hyphen
 
-	-- Open all URLs in Safari
-	tell application "Safari"
+	-- Open all URLs in Chrome
+	tell application "Google Chrome"
 		activate
 		open location tidal_URL
 		open location spotify_URL

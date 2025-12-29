@@ -1,0 +1,78 @@
+# WhoSampled Covers Scraper Configuration
+# ========================================
+# Adjust these settings to customize cover discovery
+#
+# Path Resolution:
+# - Paths support ~ (home directory expansion)
+# - Paths support $VAR and ${VAR} (environment variable expansion)
+# - Relative paths are resolved from project root
+
+# Source data location
+source:
+  # Path to top_tracks.json - adjust if on a different machine
+  # Examples:
+  #   Relative: ../Lyrics_top_songs/cache/top_tracks.json
+  #   Absolute: /path/to/top_tracks.json
+  #   With env var: $MUSIC_DATA/top_tracks.json
+  top_tracks_path: "../Lyrics_top_songs/cache/top_tracks.json"
+
+# Filtering settings
+filters:
+  # Minimum scrobbles to include a song (adjust as needed)
+  min_scrobbles: 10
+  
+  # Exclude songs/artists matching these genres (case-insensitive)
+  excluded_genres:
+    - "classical"
+    - "easy listening"  # Often includes orchestral covers
+  
+  # Exclude covers in these genres from results
+  excluded_cover_genres:
+    - "classical"
+    - "easy listening"
+  
+  # Exclude covers by these artists (novelty/tribute artists)
+  excluded_cover_artists:
+    - "8 Bit Arcade"
+    - "Music Box Mania"
+    - "String Tribute Players"
+  
+  # Optional: Only include specific artists (empty = all artists)
+  include_artists: []
+  
+  # Optional: Exclude specific artists
+  exclude_artists: []
+
+# Scraping settings
+scraping:
+  # Delay between requests (seconds) - be respectful
+  request_delay: 2.5
+  
+  # Maximum retries on failure
+  max_retries: 3
+  
+  # Timeout for requests (seconds)
+  timeout: 15
+  
+  # User agent string
+  user_agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
+
+# Output settings
+output:
+  # Cache directory for search log and failed searches
+  cache_dir: "cache"
+  
+  # Data directory for results
+  data_dir: "data"
+  
+  # Output directory for reports
+  output_dir: "output"
+
+# Processing limits (useful for testing)
+limits:
+  # Max songs to process per run (0 = unlimited)
+  max_songs: 0
+  
+  # Start from this rank (1-based, useful for resuming)
+  start_rank: 1
+
