@@ -190,7 +190,7 @@ Before leaving each day:
 
 ## Standardization Project
 
-Megan's feedback: "It's chaos."
+Megan's feedback: operational cadence needs improvement.
 
 ### Your Role
 
@@ -201,7 +201,7 @@ Megan's feedback: "It's chaos."
 
 ### What This Means
 
-You're being asked to step UP on project operations, not just execute tasks. This is a leadership opportunity within the chaos.
+You're being asked to step UP on project operations, not just execute tasks. This is a leadership opportunity.
 
 ---
 
