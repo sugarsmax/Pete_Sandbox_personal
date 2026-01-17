@@ -1,0 +1,35 @@
+artist_a,scrobbles_a,artist_b,scrobbles_b,similarity,match_type,library_url
+Alirio Diaz,43,Alirio Díaz,10,100,normalized_exact,https://www.last.fm/user/sugarsmax/library/music/Alirio%20Diaz
+Aloha Oe Hawaiian Music,23,Hawaiian,12,100,token_set,https://www.last.fm/user/sugarsmax/library/music/Aloha%20Oe%20Hawaiian%20Music
+András Schiff,63,András Schiff~Yuuko Shiokawa,11,100,partial,https://www.last.fm/user/sugarsmax/library/music/Andr%C3%A1s%20Schiff
+Benedictine Monks,33,The Benedictine Monks of Santo Domingo de Silos,12,100,token_set,https://www.last.fm/user/sugarsmax/library/music/Benedictine%20Monks
+Brad Mehldau,60,Brad Mehldau Trio,22,100,token_set,https://www.last.fm/user/sugarsmax/library/music/Brad%20Mehldau
+Bryan Ogden,14,Bryant Oden,12,90.9,fuzzy,https://www.last.fm/user/sugarsmax/library/music/Bryan%20Ogden
+Capella Istropolitana,19,Capella Istropolitana (Richard,10,100,token_set,https://www.last.fm/user/sugarsmax/library/music/Capella%20Istropolitana
+Chicago,13,Fritz Reiner; Chicago Symphony,12,100,token_set,https://www.last.fm/user/sugarsmax/library/music/Chicago
+Crookers feat. Wiley  Thomas Jules,33,Crookers,20,100,token_set,https://www.last.fm/user/sugarsmax/library/music/Crookers%20feat.%20Wiley%20%20Thomas%20Jules
+Danger,13,Harvey Danger,9,100,token_set,https://www.last.fm/user/sugarsmax/library/music/Danger
+Danger Mouse,23,Danger,13,100,token_set,https://www.last.fm/user/sugarsmax/library/music/Danger%20Mouse
+Danger Twins,23,Danger,13,100,token_set,https://www.last.fm/user/sugarsmax/library/music/Danger%20Twins
+Dave Brubeck,102,The Dave Brubeck Quartet,55,100,token_set,https://www.last.fm/user/sugarsmax/library/music/Dave%20Brubeck
+Ed Rush,29,Ed Rush & Optical,18,100,token_set,https://www.last.fm/user/sugarsmax/library/music/Ed%20Rush
+Elvis Costello and The Roots,16,The Roots,15,100,token_set,https://www.last.fm/user/sugarsmax/library/music/Elvis%20Costello%20and%20The%20Roots
+G. Love & Special Sauce,142,G. Love,28,100,token_set,https://www.last.fm/user/sugarsmax/library/music/G.%20Love%20%26%20Special%20Sauce
+Göran Söllscher,20,"Camerata Bern, Göran Söllscher & Thomas Füri",9,100,token_set,https://www.last.fm/user/sugarsmax/library/music/G%C3%B6ran%20S%C3%B6llscher
+Geoffrey Simon~The London Philharmonic,34,Geoffrey Simon~The Philharmonia,26,87,fuzzy,https://www.last.fm/user/sugarsmax/library/music/Geoffrey%20Simon~The%20London%20Philharmonic
+George Kahumoku,9,"George Kahumoku, Jr.",9,90.9,normalized,https://www.last.fm/user/sugarsmax/library/music/George%20Kahumoku
+Juan D'Arienzo,28,Juan D'Arienzo and his Orchestra,10,100,token_set,https://www.last.fm/user/sugarsmax/library/music/Juan%20D%27Arienzo
+Nickodemus,18,Quantic & Nickodemus,14,100,token_set,https://www.last.fm/user/sugarsmax/library/music/Nickodemus
+Odair Assad & Sérgio Assad,26,Sérgio & Odair Assad,9,100,token_set,https://www.last.fm/user/sugarsmax/library/music/Odair%20Assad%20%26%20S%C3%A9rgio%20Assad
+Paris,15,Paris Combo,11,100,token_set,https://www.last.fm/user/sugarsmax/library/music/Paris
+Pietro Antonio Locatelli,10,Pietro Locatelli,9,100,token_set,https://www.last.fm/user/sugarsmax/library/music/Pietro%20Antonio%20Locatelli
+Prince,19,DJ Jazzy Jeff & The Fresh Prince,18,100,token_set,https://www.last.fm/user/sugarsmax/library/music/Prince
+Prince,19,Prince Fatty,19,100,token_set,https://www.last.fm/user/sugarsmax/library/music/Prince
+Quantic,36,Quantic & Nickodemus,14,100,token_set,https://www.last.fm/user/sugarsmax/library/music/Quantic
+Queen,84,"The Good, the Bad & the Queen",16,100,token_set,https://www.last.fm/user/sugarsmax/library/music/Queen
+Run–D.M.C.,33,Run-D.M.C.,31,100,normalized_exact,https://www.last.fm/user/sugarsmax/library/music/Run%E2%80%93D.M.C.
+Subatomic,17,SubAtomic_,14,94.7,fuzzy,https://www.last.fm/user/sugarsmax/library/music/Subatomic
+The Prodigy,145,Prodigy,20,100,normalized_exact,https://www.last.fm/user/sugarsmax/library/music/The%20Prodigy
+The Strokes,25,The Tokens,10,85.7,fuzzy,https://www.last.fm/user/sugarsmax/library/music/The%20Strokes
+Ukulele Hawaiian Band,25,Hawaiian,12,100,token_set,https://www.last.fm/user/sugarsmax/library/music/Ukulele%20Hawaiian%20Band
+Vince Guaraldi Trio,150,Vince Guaraldi,23,100,token_set,https://www.last.fm/user/sugarsmax/library/music/Vince%20Guaraldi%20Trio

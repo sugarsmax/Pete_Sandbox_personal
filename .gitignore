@@ -59,6 +59,7 @@ frames/
 
 # Credentials & Secrets
 .env
+last.fm/.envrc
 .env.local
 config/.credentials.json
 config/secrets/
